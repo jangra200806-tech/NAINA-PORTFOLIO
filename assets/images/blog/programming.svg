@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750" role="img" aria-label="Git branch diagram and terminal window">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#080B1A"/>
+      <stop offset="1" stop-color="#10152B"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8B5CF6"/>
+      <stop offset="1" stop-color="#38BDF8"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#38BDF8" stop-opacity="0.4"/>
+      <stop offset="1" stop-color="#38BDF8" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="52" height="52" patternUnits="userSpaceOnUse">
+      <path d="M52 0H0v52" fill="none" stroke="#38BDF8" stroke-opacity="0.055"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="750" fill="url(#bg)"/>
+  <rect width="1200" height="750" fill="url(#grid)"/>
+  <circle cx="980" cy="590" r="310" fill="url(#glow)"/>
+
+  <rect x="140" y="170" width="500" height="410" rx="24" fill="#090D1B" stroke="#8B5CF6" stroke-opacity="0.42"/>
+  <path d="M140 226h500" stroke="#8B5CF6" stroke-opacity="0.2"/>
+  <circle cx="174" cy="198" r="6" fill="#8B5CF6"/><circle cx="196" cy="198" r="6" fill="#38BDF8"/><circle cx="218" cy="198" r="6" fill="#334155"/>
+  <text x="174" y="270" font-family="monospace" font-size="14" fill="#38BDF8" opacity="0.85">$ git status</text>
+  <text x="174" y="302" font-family="monospace" font-size="13" fill="#A1A1AA" opacity="0.65">On branch main</text>
+  <text x="174" y="330" font-family="monospace" font-size="13" fill="#A1A1AA" opacity="0.65">nothing to commit,</text>
+  <text x="174" y="356" font-family="monospace" font-size="13" fill="#A1A1AA" opacity="0.65">working tree clean</text>
+  <text x="174" y="410" font-family="monospace" font-size="14" fill="#8B5CF6" opacity="0.85">$ git switch -c notes</text>
+  <text x="174" y="438" font-family="monospace" font-size="13" fill="#A1A1AA" opacity="0.65">Switched to a new branch</text>
+  <rect x="174" y="474" width="132" height="36" rx="18" fill="#38BDF8" fill-opacity="0.12" stroke="#38BDF8" stroke-opacity="0.3"/>
+
+  <path d="M810 230v320" stroke="#8B5CF6" stroke-opacity="0.4" stroke-width="2"/>
+  <path d="M810 300c74 0 74 90 148 90M810 470c74 0 74-70 148-70" fill="none" stroke="url(#line)" stroke-width="3" stroke-linecap="round"/>
+  <g fill="#090D1B" stroke="#38BDF8" stroke-width="2">
+    <circle cx="810" cy="230" r="18"/><circle cx="810" cy="300" r="18"/>
+    <circle cx="810" cy="470" r="18"/><circle cx="810" cy="550" r="18"/>
+    <circle cx="958" cy="390" r="18"/><circle cx="958" cy="400" r="18"/>
+  </g>
+  <g fill="#8B5CF6">
+    <circle cx="810" cy="230" r="5"/><circle cx="810" cy="300" r="5"/>
+    <circle cx="810" cy="470" r="5"/><circle cx="810" cy="550" r="5"/>
+  </g>
+  <g fill="#38BDF8"><circle cx="958" cy="390" r="5"/><circle cx="958" cy="400" r="5"/></g>
+  <g font-family="monospace" font-size="12" fill="#A1A1AA" opacity="0.55" letter-spacing="2">
+    <text x="842" y="235">INIT</text>
+    <text x="842" y="305">BUILD</text>
+    <text x="842" y="475">NOTES</text>
+    <text x="842" y="555">MAIN</text>
+    <text x="988" y="394">BRANCH</text>
+  </g>
+  <text x="600" y="660" text-anchor="middle" font-family="monospace" font-size="12" letter-spacing="5" fill="#A1A1AA" fill-opacity="0.5">COMMIT · BRANCH · LEARN</text>
+</svg>

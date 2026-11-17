@@ -1,0 +1,8 @@
+# Local deployment metadata
+.vercel/
+
+# OS / editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+*.local
