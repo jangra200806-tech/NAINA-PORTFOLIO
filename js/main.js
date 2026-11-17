@@ -289,7 +289,6 @@
     var pHeight = 1;
     var pFrame = null;
     var pVisible = true;
-    var pPointer = { x: null, y: null };
 
     function pResize() {
       var rect = particleCanvas.getBoundingClientRect();
@@ -299,36 +298,27 @@
       particleCanvas.height = Math.round(pHeight * pDpr);
       pctx.setTransform(pDpr, 0, 0, pDpr, 0, 0);
 
-      var count = Math.round(Math.min(74, Math.max(22, pWidth / 20)));
+      var count = Math.round(Math.min(30, Math.max(10, pWidth / 48)));
       pParticles = [];
 
       for (var i = 0; i < count; i += 1) {
         pParticles.push({
           x: Math.random() * pWidth,
           y: Math.random() * pHeight,
-          vx: (Math.random() - 0.5) * 0.22,
-          vy: -(0.08 + Math.random() * 0.28),
-          r: 0.6 + Math.random() * 1.5,
-          a: 0.2 + Math.random() * 0.45,
-          blue: Math.random() > 0.52
+          vx: (Math.random() - 0.5) * 0.12,
+          vy: -(0.04 + Math.random() * 0.14),
+          r: 0.5 + Math.random() * 0.9,
+          a: 0.08 + Math.random() * 0.2,
+          tone: Math.random() > 0.5
         });
       }
     }
 
     function pDraw() {
       pctx.clearRect(0, 0, pWidth, pHeight);
-      pctx.shadowBlur = 0;
 
-      var i;
-      var j;
-      var p;
-      var q;
-      var dx;
-      var dy;
-      var dist;
-
-      for (i = 0; i < pParticles.length; i += 1) {
-        p = pParticles[i];
+      for (var i = 0; i < pParticles.length; i += 1) {
+        var p = pParticles[i];
         p.x += p.vx;
         p.y += p.vy;
 
@@ -340,53 +330,11 @@
         if (p.x > pWidth + 10) p.x = -10;
 
         pctx.beginPath();
-        pctx.fillStyle = p.blue
-          ? "rgba(56, 189, 248, " + p.a + ")"
-          : "rgba(167, 139, 250, " + p.a + ")";
-        pctx.shadowColor = p.blue
-          ? "rgba(56, 189, 248, 0.9)"
-          : "rgba(139, 92, 246, 0.9)";
-        pctx.shadowBlur = 8;
+        pctx.fillStyle = p.tone
+          ? "rgba(217, 201, 235, " + p.a + ")"
+          : "rgba(167, 139, 206, " + p.a + ")";
         pctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
         pctx.fill();
-      }
-
-      pctx.shadowBlur = 0;
-      pctx.lineWidth = 0.6;
-
-      for (i = 0; i < pParticles.length; i += 1) {
-        p = pParticles[i];
-
-        for (j = i + 1; j < pParticles.length; j += 1) {
-          q = pParticles[j];
-          dx = p.x - q.x;
-          dy = p.y - q.y;
-          dist = dx * dx + dy * dy;
-
-          if (dist < 12100) {
-            pctx.beginPath();
-            pctx.strokeStyle = "rgba(139, 92, 246, " + 0.1 * (1 - dist / 12100) + ")";
-            pctx.moveTo(p.x, p.y);
-            pctx.lineTo(q.x, q.y);
-            pctx.stroke();
-          }
-        }
-
-        if (pPointer.x !== null) {
-          dx = p.x - pPointer.x;
-          dy = p.y - pPointer.y;
-          dist = dx * dx + dy * dy;
-
-          if (dist < 22500) {
-            pctx.beginPath();
-            pctx.strokeStyle = "rgba(56, 189, 248, " + 0.17 * (1 - dist / 22500) + ")";
-            pctx.lineWidth = 0.7;
-            pctx.moveTo(p.x, p.y);
-            pctx.lineTo(pPointer.x, pPointer.y);
-            pctx.stroke();
-            pctx.lineWidth = 0.6;
-          }
-        }
       }
 
       pFrame = window.requestAnimationFrame(pDraw);
@@ -405,23 +353,6 @@
 
     pResize();
     pStart();
-
-    var heroSection = document.querySelector(".hero");
-    if (heroSection) {
-      heroSection.addEventListener(
-        "pointermove",
-        function (event) {
-          var rect = particleCanvas.getBoundingClientRect();
-          pPointer.x = event.clientX - rect.left;
-          pPointer.y = event.clientY - rect.top;
-        },
-        { passive: true }
-      );
-      heroSection.addEventListener("pointerleave", function () {
-        pPointer.x = null;
-        pPointer.y = null;
-      });
-    }
 
     window.addEventListener("resize", pResize, { passive: true });
 

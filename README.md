@@ -65,7 +65,7 @@ Then visit `http://localhost:5500`.
 
 ### 1. Add your real photo
 
-The current portrait is a neon monogram placeholder.
+The current portrait is a midnight-navy and lavender monogram placeholder.
 
 1. Export a **square** photo, at least `1200 × 1200`, as JPG or WebP.
 2. Save it as `assets/images/naina-portrait.jpg`.
@@ -113,7 +113,7 @@ with one real link:
 ```
 
 `.project-link` is already styled in `css/style.css`; the disabled state becomes
-a glowing interactive button automatically once the real link is added.
+a refined lavender interactive button automatically once the real link is added.
 
 ### 4. Edit the blog drafts
 
@@ -154,13 +154,15 @@ All colours and type settings live at the top of `css/style.css`:
 
 | Token | Value | Use |
 |---|---|---|
-| `--bg` | `#080812` | Page background |
-| `--bg-2` | `#10152B` | Glass surfaces and alternate bands |
-| `--purple` | `#8B5CF6` | Primary violet glow |
-| `--blue` | `#38BDF8` | Electric-blue accent |
-| `--text` | `#F8FAFC` | Headings and primary text |
-| `--muted` | `#A1A1AA` | Body and secondary text |
-| `--grad` | violet → indigo → blue | Buttons, borders and highlights |
+| `--bg` | `#111827` | Midnight-navy page background |
+| `--bg-2` | `#1B2030` | Secondary background and alternate bands |
+| `--bg-3` | `#25263A` | Card background |
+| `--purple` | `#A78BCE` | Primary lavender accent |
+| `--blue` | `#D9C9EB` | Soft lavender secondary accent |
+| `--text` | `#F5F3F8` | Headings and primary text |
+| `--muted` | `#B8B5C2` | Body and secondary text |
+| `--line` | `#39394A` | Borders and dividers |
+| `--grad` | lavender → soft lavender | Buttons and highlights |
 
 Typography: **Space Grotesk** (display), **Manrope** (body) and **JetBrains Mono**
 (micro-labels), loaded from Google Fonts with local fallbacks.
@@ -173,8 +175,8 @@ Typography: **Space Grotesk** (display), **Manrope** (body) and **JetBrains Mono
   Developer, Digital Creator, Digital Marketing Learner.
 - Motion is disabled automatically for visitors who prefer reduced motion,
   including the hero particle field.
-- All sections share the obsidian / violet / electric-blue theme, with
-  glassmorphism cards, gradient borders and soft neon glows.
+- All sections share the midnight-navy / lavender theme, with refined
+  glassmorphism cards, quiet gradient borders and subtle depth.
 - The site is static, so it deploys as-is to Vercel, Netlify or GitHub Pages.
 - Copy in the About and project sections is intentionally neutral and should be
   reviewed in your own voice before publishing.

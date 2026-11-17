@@ -1,27 +1,27 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750" role="img" aria-label="Layered website project cards">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#080B1A"/>
-      <stop offset="1" stop-color="#10152B"/>
+      <stop offset="0" stop-color="#111827"/>
+      <stop offset="1" stop-color="#1B2030"/>
     </linearGradient>
     <linearGradient id="cardA" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#1D1B4B"/>
-      <stop offset="1" stop-color="#090D1B"/>
+      <stop offset="0" stop-color="#2B2B42"/>
+      <stop offset="1" stop-color="#141A29"/>
     </linearGradient>
     <linearGradient id="cardB" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#172554"/>
-      <stop offset="1" stop-color="#090D1B"/>
+      <stop offset="0" stop-color="#25263A"/>
+      <stop offset="1" stop-color="#141A29"/>
     </linearGradient>
     <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#8B5CF6"/>
-      <stop offset="1" stop-color="#38BDF8"/>
+      <stop offset="0" stop-color="#A78BCE"/>
+      <stop offset="1" stop-color="#D9C9EB"/>
     </linearGradient>
     <radialGradient id="glow" cx="50%" cy="50%" r="50%">
-      <stop offset="0" stop-color="#8B5CF6" stop-opacity="0.48"/>
-      <stop offset="1" stop-color="#8B5CF6" stop-opacity="0"/>
+      <stop offset="0" stop-color="#A78BCE" stop-opacity="0.48"/>
+      <stop offset="1" stop-color="#A78BCE" stop-opacity="0"/>
     </radialGradient>
     <pattern id="grid" width="54" height="54" patternUnits="userSpaceOnUse">
-      <path d="M54 0H0v54" fill="none" stroke="#8B5CF6" stroke-opacity="0.06"/>
+      <path d="M54 0H0v54" fill="none" stroke="#A78BCE" stroke-opacity="0.06"/>
     </pattern>
   </defs>
   <rect width="1200" height="750" fill="url(#bg)"/>
@@ -30,29 +30,29 @@
   <circle cx="250" cy="660" r="260" fill="url(#glow)" opacity="0.4"/>
 
   <g transform="rotate(-8 600 375)">
-    <rect x="200" y="250" width="570" height="350" rx="24" fill="url(#cardA)" stroke="#8B5CF6" stroke-opacity="0.4"/>
-    <path d="M200 306h570" stroke="#8B5CF6" stroke-opacity="0.2"/>
-    <circle cx="236" cy="278" r="6" fill="#8B5CF6"/><circle cx="258" cy="278" r="6" fill="#38BDF8"/><circle cx="280" cy="278" r="6" fill="#334155"/>
-    <rect x="238" y="342" width="230" height="16" rx="8" fill="#38BDF8" fill-opacity="0.55"/>
-    <rect x="238" y="378" width="320" height="9" rx="4" fill="#A1A1AA" fill-opacity="0.18"/>
-    <rect x="238" y="400" width="260" height="9" rx="4" fill="#A1A1AA" fill-opacity="0.13"/>
+    <rect x="200" y="250" width="570" height="350" rx="24" fill="url(#cardA)" stroke="#A78BCE" stroke-opacity="0.4"/>
+    <path d="M200 306h570" stroke="#A78BCE" stroke-opacity="0.2"/>
+    <circle cx="236" cy="278" r="6" fill="#A78BCE"/><circle cx="258" cy="278" r="6" fill="#D9C9EB"/><circle cx="280" cy="278" r="6" fill="#39394A"/>
+    <rect x="238" y="342" width="230" height="16" rx="8" fill="#D9C9EB" fill-opacity="0.55"/>
+    <rect x="238" y="378" width="320" height="9" rx="4" fill="#B8B5C2" fill-opacity="0.18"/>
+    <rect x="238" y="400" width="260" height="9" rx="4" fill="#B8B5C2" fill-opacity="0.13"/>
     <rect x="238" y="442" width="108" height="34" rx="17" fill="url(#line)" fill-opacity="0.7"/>
-    <circle cx="638" cy="470" r="74" fill="#38BDF8" fill-opacity="0.13" stroke="#38BDF8" stroke-opacity="0.3"/>
+    <circle cx="638" cy="470" r="74" fill="#D9C9EB" fill-opacity="0.13" stroke="#D9C9EB" stroke-opacity="0.3"/>
   </g>
 
   <g transform="rotate(7 750 430)">
-    <rect x="455" y="270" width="560" height="350" rx="24" fill="url(#cardB)" stroke="#38BDF8" stroke-opacity="0.4"/>
-    <path d="M455 326h560" stroke="#38BDF8" stroke-opacity="0.16"/>
-    <circle cx="491" cy="298" r="6" fill="#8B5CF6"/><circle cx="513" cy="298" r="6" fill="#38BDF8"/><circle cx="535" cy="298" r="6" fill="#334155"/>
-    <rect x="496" y="360" width="180" height="14" rx="7" fill="#8B5CF6" fill-opacity="0.6"/>
-    <rect x="496" y="394" width="290" height="9" rx="4" fill="#A1A1AA" fill-opacity="0.17"/>
-    <rect x="496" y="416" width="230" height="9" rx="4" fill="#A1A1AA" fill-opacity="0.12"/>
-    <rect x="496" y="458" width="116" height="34" rx="17" fill="#38BDF8" fill-opacity="0.16" stroke="#38BDF8" stroke-opacity="0.36"/>
-    <rect x="496" y="516" width="330" height="46" rx="12" fill="#0A0E1C" stroke="#8B5CF6" stroke-opacity="0.2"/>
+    <rect x="455" y="270" width="560" height="350" rx="24" fill="url(#cardB)" stroke="#D9C9EB" stroke-opacity="0.4"/>
+    <path d="M455 326h560" stroke="#D9C9EB" stroke-opacity="0.16"/>
+    <circle cx="491" cy="298" r="6" fill="#A78BCE"/><circle cx="513" cy="298" r="6" fill="#D9C9EB"/><circle cx="535" cy="298" r="6" fill="#39394A"/>
+    <rect x="496" y="360" width="180" height="14" rx="7" fill="#A78BCE" fill-opacity="0.6"/>
+    <rect x="496" y="394" width="290" height="9" rx="4" fill="#B8B5C2" fill-opacity="0.17"/>
+    <rect x="496" y="416" width="230" height="9" rx="4" fill="#B8B5C2" fill-opacity="0.12"/>
+    <rect x="496" y="458" width="116" height="34" rx="17" fill="#D9C9EB" fill-opacity="0.16" stroke="#D9C9EB" stroke-opacity="0.36"/>
+    <rect x="496" y="516" width="330" height="46" rx="12" fill="#111827" stroke="#A78BCE" stroke-opacity="0.2"/>
   </g>
 
-  <rect x="505" y="590" width="190" height="50" rx="25" fill="#0A0E1C" stroke="#38BDF8" stroke-opacity="0.36"/>
-  <text x="600" y="622" text-anchor="middle" font-family="monospace" font-size="12" letter-spacing="4" fill="#38BDF8">SELECTED BUILDS</text>
-  <circle cx="845" cy="205" r="4" fill="#38BDF8"/>
-  <circle cx="320" cy="180" r="3" fill="#A78BFA"/>
+  <rect x="505" y="590" width="190" height="50" rx="25" fill="#111827" stroke="#D9C9EB" stroke-opacity="0.36"/>
+  <text x="600" y="622" text-anchor="middle" font-family="monospace" font-size="12" letter-spacing="4" fill="#D9C9EB">SELECTED BUILDS</text>
+  <circle cx="845" cy="205" r="4" fill="#D9C9EB"/>
+  <circle cx="320" cy="180" r="3" fill="#D9C9EB"/>
 </svg>
