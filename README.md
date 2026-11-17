@@ -1,6 +1,8 @@
 # Naina Jangra — Portfolio
 
-Live: **https://naina-jangra-portfolio.vercel.app**
+Live:
+- Render: **https://naina-jangra-portfolio.onrender.com**
+- Vercel: **https://naina-jangra-portfolio.vercel.app**
 
 A premium, futuristic portfolio built with plain HTML5, CSS3 and JavaScript.
 No frameworks, no build step — open `index.html` and it runs.
