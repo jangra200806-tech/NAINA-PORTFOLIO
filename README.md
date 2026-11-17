@@ -40,6 +40,7 @@ js/main.js                  Typewriter, navigation, reveals, tilt, filters, form
 js/blog.js                  Blog article content and detail-page rendering
 assets/images/              Placeholder portrait and blog thumbnail artwork (SVG)
 assets/icons/favicon.svg    Browser icon
+assets/icons/skills/        Monochrome tool and skill icons for the orbit
 render.yaml                 Render static-site Blueprint (requires a Git repo)
 ```
 
@@ -164,8 +165,19 @@ All colours and type settings live at the top of `css/style.css`:
 | `--line` | `#39394A` | Borders and dividers |
 | `--grad` | lavender → soft lavender | Buttons and highlights |
 
-Typography: **Space Grotesk** (display), **Manrope** (body) and **JetBrains Mono**
-(micro-labels), loaded from Google Fonts with local fallbacks.
+Typography: **Space Grotesk** (display), **Manrope** (body), **JetBrains Mono**
+(micro-labels) and **Playfair Display** (serif headings in the warm sections),
+loaded from Google Fonts with local fallbacks.
+
+The Skills and Education sections use a scoped warm editorial palette:
+
+| Token | Value | Use |
+|---|---|---|
+| `--warm-charcoal` | `#211B19` | Section background and timeline dots |
+| `--warm-cream` | `#F7F1E8` | Headings, orbit labels and card surfaces |
+| `--warm-champagne` | `#E4D4BE` | Orbit accents and the goal card |
+| `--warm-rose` | `#B88778` | Serif accents, line work and markers |
+| `--warm-brown` | `#40312D` | Text on cream cards |
 
 ---
 
@@ -175,8 +187,10 @@ Typography: **Space Grotesk** (display), **Manrope** (body) and **JetBrains Mono
   Developer, Digital Creator, Digital Marketing Learner.
 - Motion is disabled automatically for visitors who prefer reduced motion,
   including the hero particle field.
-- All sections share the midnight-navy / lavender theme, with refined
+- The main portfolio uses the midnight-navy / lavender theme, with refined
   glassmorphism cards, quiet gradient borders and subtle depth.
+- Skills and Education switch to a warm charcoal / cream / rose-gold editorial
+  treatment, while keeping the same navigation, content and responsive layout.
 - The site is static, so it deploys as-is to Vercel, Netlify or GitHub Pages.
 - Copy in the About and project sections is intentionally neutral and should be
   reviewed in your own voice before publishing.
