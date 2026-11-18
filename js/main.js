@@ -20,9 +20,8 @@
 
   if (typedEl) {
     var roles = [
-      "Creative Developer",
-      "AI Enthusiast",
       "Web Developer",
+      "AI Enthusiast",
       "Digital Creator",
       "Digital Marketing Learner"
     ];

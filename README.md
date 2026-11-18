@@ -155,42 +155,37 @@ All colours and type settings live at the top of `css/style.css`:
 
 | Token | Value | Use |
 |---|---|---|
-| `--bg` | `#111827` | Midnight-navy page background |
-| `--bg-2` | `#1B2030` | Secondary background and alternate bands |
-| `--bg-3` | `#25263A` | Card background |
-| `--purple` | `#A78BCE` | Primary lavender accent |
-| `--blue` | `#D9C9EB` | Soft lavender secondary accent |
-| `--text` | `#F5F3F8` | Headings and primary text |
-| `--muted` | `#B8B5C2` | Body and secondary text |
-| `--line` | `#39394A` | Borders and dividers |
-| `--grad` | lavender → soft lavender | Buttons and highlights |
+| `--bg` | `#080812` | Deep space page background |
+| `--bg-2` | `#10152B` | Secondary background and alternate bands |
+| `--bg-3` | `#15172A` | Card and panel surface |
+| `--purple` | `#8B5CF6` | Primary violet accent |
+| `--blue` | `#38BDF8` | Electric-blue secondary accent |
+| `--text` | `#F8FAFC` | Headings and primary text |
+| `--muted` | `#A1A1AA` | Body and secondary text |
+| `--line` | `rgba(139, 92, 246, 0.20)` | Borders and dividers |
+| `--grad` | violet → electric blue | Buttons, accents and highlights |
 
-Typography: **Space Grotesk** (display), **Manrope** (body), **JetBrains Mono**
-(micro-labels) and **Playfair Display** (serif headings in the warm sections),
-loaded from Google Fonts with local fallbacks.
+Typography: **Playfair Display** (display), **Manrope** (body) and
+**JetBrains Mono** (micro-labels), loaded from Google Fonts with local
+fallbacks.
 
-The Skills and Education sections use a scoped warm editorial palette:
-
-| Token | Value | Use |
-|---|---|---|
-| `--warm-charcoal` | `#211B19` | Section background and timeline dots |
-| `--warm-cream` | `#F7F1E8` | Headings, orbit labels and card surfaces |
-| `--warm-champagne` | `#E4D4BE` | Orbit accents and the goal card |
-| `--warm-rose` | `#B88778` | Serif accents, line work and markers |
-| `--warm-brown` | `#40312D` | Text on cream cards |
+The Skills and Education sections share the same dark palette — the orbit
+accents, timeline line and markers all use the violet → electric-blue gradient,
+so no scoped section theme is needed.
 
 ---
 
 ## Notes
 
-- The typewriter cycles through: Creative Developer, AI Enthusiast, Web
-  Developer, Digital Creator, Digital Marketing Learner.
+- The typewriter cycles through: Web Developer, AI Enthusiast, Digital Creator,
+  Digital Marketing Learner.
 - Motion is disabled automatically for visitors who prefer reduced motion,
-  including the hero particle field.
-- The main portfolio uses the midnight-navy / lavender theme, with refined
-  glassmorphism cards, quiet gradient borders and subtle depth.
-- Skills and Education switch to a warm charcoal / cream / rose-gold editorial
-  treatment, while keeping the same navigation, content and responsive layout.
+  including the hero particle field and the skills orbit.
+- The portfolio uses a dark futuristic theme — deep space background, violet and
+  electric-blue accents, restrained glassmorphism, ambient glow and a subtle
+  grid/particle atmosphere.
+- Skills and Education keep their existing mechanics (rotating orbit, vertical
+  alternating timeline) and now read as part of the same dark palette.
 - The site is static, so it deploys as-is to Vercel, Netlify or GitHub Pages.
 - Copy in the About and project sections is intentionally neutral and should be
   reviewed in your own voice before publishing.
