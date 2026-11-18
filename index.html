@@ -3,23 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Naina Jangra — Aspiring Web Developer & AI Enthusiast | Kaithal</title>
-  <meta name="description" content="Portfolio of Naina Jangra — aspiring web developer, AI enthusiast and digital creator from Kaithal, Haryana. Currently pursuing BCA at MDU University and studying Digital Marketing with AI. School: DAV Police Public School, Kaithal.">
+
+  <title>Naina Jangra — Web Developer &amp; AI-powered Digital Creator</title>
+  <meta name="description" content="Portfolio of Naina Jangra — a web developer and AI-powered digital creator from Kaithal, Haryana. Responsive websites, AI-assisted workflows and digital marketing fundamentals.">
   <meta name="author" content="Naina Jangra">
-  <meta name="theme-color" content="#080812">
+  <meta name="theme-color" content="#0B0B1A">
   <meta name="robots" content="index, follow">
 
+  <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Naina Jangra — Aspiring Web Developer & AI Enthusiast">
-  <meta property="og:description" content="Aspiring web developer, AI enthusiast and digital creator from Kaithal, Haryana. BCA at MDU University · Digital Marketing with AI · DAV Police Public School.">
+  <meta property="og:site_name" content="Naina Jangra">
+  <meta property="og:title" content="Naina Jangra — Web Developer &amp; AI-powered Digital Creator">
+  <meta property="og:description" content="Web developer and AI-powered digital creator from Kaithal, Haryana. Responsive websites, AI-assisted workflows and digital marketing fundamentals.">
+  <!-- TODO: replace these two URLs with your custom domain once you have one -->
+  <meta property="og:url" content="https://naina-jangra-portfolio.vercel.app/">
+  <meta property="og:image" content="https://naina-jangra-portfolio.vercel.app/assets/images/og-cover.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Naina Jangra — Web Developer and AI-powered Digital Creator">
   <meta property="og:locale" content="en_IN">
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Naina Jangra — Web Developer &amp; AI-powered Digital Creator">
+  <meta name="twitter:description" content="Web developer and AI-powered digital creator from Kaithal, Haryana.">
+  <meta name="twitter:image" content="https://naina-jangra-portfolio.vercel.app/assets/images/og-cover.png">
 
+  <link rel="canonical" href="https://naina-jangra-portfolio.vercel.app/">
   <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/icons/favicon.svg">
 
+  <!-- Fonts: Poppins (headings) + Inter (body) only -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Manrope:wght@300..700&amp;display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700&amp;display=swap">
 
   <link rel="stylesheet" href="css/style.css">
   <script>document.documentElement.classList.add('js');</script>
@@ -29,8 +44,8 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Naina Jangra",
-    "description": "Aspiring web developer, AI enthusiast, digital creator and digital marketing learner based in Kaithal, Haryana, India.",
-    "jobTitle": "Aspiring Web Developer",
+    "description": "Web developer and AI-powered digital creator based in Kaithal, Haryana, India.",
+    "jobTitle": "Web Developer & AI-powered Digital Creator",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Kaithal",
@@ -42,10 +57,10 @@
       "HTML5",
       "CSS3",
       "JavaScript",
+      "React",
       "Artificial Intelligence",
-      "Digital Marketing",
-      "Creative Design",
-      "Content Creation"
+      "Prompt Engineering",
+      "Digital Marketing"
     ]
   }
   </script>
@@ -53,1153 +68,538 @@
 
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
 
-  <!-- ================= NAV ================= -->
-  <header class="site-nav" id="site-nav">
-    <div class="nav-shell">
-      <a class="logo" href="#home" aria-label="Naina Jangra — back to top">nj<span>.</span></a>
+  <!-- ==========================================================
+       NAVBAR — Projects · Skills · About · Contact
+       ========================================================== -->
+  <header class="site-header" id="site-header">
+    <div class="container nav-inner">
+      <a class="logo" href="#home" aria-label="Naina Jangra — back to top">naina<span>.</span></a>
 
       <nav class="nav-links" aria-label="Primary">
-        <a href="#home" class="active">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
-        <a href="#blog">Blog</a>
-        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
 
-      <div class="nav-right">
-        <a class="nav-cta" href="#contact">
-          Let's talk
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
-        </a>
-        <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
-          <span></span><span></span>
-        </button>
+      <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <nav class="mobile-nav" aria-label="Mobile">
+        <a href="#projects"><span>01</span>Projects</a>
+        <a href="#skills"><span>02</span>Skills</a>
+        <a href="#about"><span>03</span>About</a>
+        <a href="#contact"><span>04</span>Contact</a>
+      </nav>
+      <div class="mobile-menu-foot">
+        <span>Say hello</span>
+        <a href="mailto:hello@nainajangra.com">hello@nainajangra.com</a>
       </div>
     </div>
   </header>
 
-  <div class="mobile-panel" id="mobile-menu" aria-hidden="true">
-    <nav class="mobile-nav" aria-label="Mobile">
-      <a href="#home"><span>01</span>Home</a>
-      <a href="#about"><span>02</span>About</a>
-      <a href="#skills"><span>03</span>Skills</a>
-      <a href="#projects"><span>04</span>Projects</a>
-      <a href="#blog"><span>05</span>Blog</a>
-      <a href="#education"><span>06</span>Education</a>
-      <a href="#contact"><span>07</span>Contact</a>
-    </nav>
-    <div class="mobile-meta">
-      <span class="mobile-meta-label">Say hello</span>
-      <a href="mailto:hello@nainajangra.com">hello@nainajangra.com</a>
-      <span>Kaithal, Haryana · India</span>
-    </div>
-  </div>
-
   <main id="main">
 
-    <!-- ================= HERO ================= -->
+    <!-- ==========================================================
+         HERO
+         ========================================================== -->
     <section class="hero" id="home">
-      <div class="hero-bg" aria-hidden="true">
-        <span class="blob blob--1"></span>
-        <span class="blob blob--2"></span>
-        <span class="blob blob--3"></span>
-        <span class="hero-lines"></span>
-        <canvas class="hero-particles" id="hero-particles"></canvas>
+      <div class="hero-glow" aria-hidden="true">
+        <span class="glow glow--one"></span>
+        <span class="glow glow--two"></span>
+        <span class="hero-grid-lines"></span>
       </div>
 
-      <div class="wrap hero-grid">
+      <div class="container hero-inner">
         <div class="hero-copy">
-          <p class="hero-eyebrow reveal">Hello, welcome to my portfolio</p>
+          <p class="eyebrow reveal">Hello, I'm</p>
 
-          <h1 class="hero-title reveal" style="--delay:70ms">
-            <span class="line line--intro">Hi, I'm</span>
-            <span class="line line--name">Naina <em>Jangra</em><span class="title-dot">.</span></span>
+          <h1 class="hero-name reveal" style="--delay:60ms">
+            Naina <span class="grad-text">Jangra</span><span class="dot">.</span>
           </h1>
 
-          <div class="hero-role reveal" style="--delay:150ms">
-            <span class="role-prefix">I'm a</span>
-            <span class="sr-only">Creative Developer, AI Enthusiast, Web Developer, Digital Creator and Digital Marketing Learner.</span>
-            <span class="typed-wrap" aria-hidden="true"><span class="typed" id="typed-role">Creative Developer</span><span class="caret"></span></span>
-          </div>
-
-          <p class="hero-lede reveal" style="--delay:230ms">
-            I build modern websites and creative digital experiences using AI-assisted
-            development, and I'm currently pursuing my BCA while developing my skills in
-            digital marketing — from SEO basics to content creation, social media strategy,
-            and AI-powered tools.
+          <p class="hero-role reveal" style="--delay:120ms">
+            Web Developer &amp; <span class="grad-text">AI-powered</span> Digital Creator
           </p>
 
-          <div class="hero-actions reveal" style="--delay:310ms">
-            <a class="btn btn-primary" href="#projects">
+          <p class="hero-lede reveal" style="--delay:180ms">
+            I build modern, responsive websites and AI-assisted digital experiences —
+            currently pursuing my BCA while learning digital marketing, SEO and content creation.
+          </p>
+
+          <div class="hero-actions reveal" style="--delay:240ms">
+            <a class="btn btn--primary" href="#projects">
               View Projects
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </a>
-            <a class="btn btn-ghost" href="#contact">
-              Contact Me
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+
+            <!-- TODO (CV): put your CV at assets/cv/Naina-Jangra-CV.pdf — the button below will start working -->
+            <a class="btn btn--ghost" href="assets/cv/Naina-Jangra-CV.pdf" download>
+              Download CV
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7.5 10.5 12 15l4.5-4.5M5 19h14"/></svg>
             </a>
           </div>
+
+          <ul class="hero-meta reveal" style="--delay:300ms">
+            <li><i aria-hidden="true"></i>BCA · MDU University</li>
+            <li><i aria-hidden="true"></i>Digital Marketing with AI</li>
+            <li><i aria-hidden="true"></i>Kaithal, Haryana</li>
+          </ul>
         </div>
 
-        <div class="hero-visual reveal" style="--delay:260ms">
-          <div class="portrait" data-tilt>
-            <span class="portrait-halo" aria-hidden="true"></span>
-            <span class="portrait-offset" aria-hidden="true"></span>
-            <span class="portrait-orbit" aria-hidden="true"><i></i></span>
-            <div class="portrait-frame">
-              <img src="assets/images/profile-placeholder.svg" alt="Placeholder portrait for Naina Jangra" width="800" height="800" fetchpriority="high">
+        <div class="hero-visual reveal" style="--delay:200ms">
+          <div class="portrait">
+            <span class="portrait-ring" aria-hidden="true"></span>
+            <span class="portrait-dots" aria-hidden="true"></span>
+
+            <div class="portrait-photo">
+              <!-- TODO (PHOTO): replace this placeholder with your real photo:
+                   <img src="assets/images/naina-portrait.jpg" alt="Naina Jangra" width="720" height="720" fetchpriority="high"> -->
+              <span class="portrait-initials" aria-hidden="true">NJ</span>
+              <span class="sr-only">Naina Jangra</span>
             </div>
 
-            <span class="float-chip float-chip--a"><i class="dot dot--sage"></i>BCA · MDU</span>
-            <span class="float-chip float-chip--b"><i class="dot dot--terra"></i>Kaithal, IN</span>
-
-            <div class="seal" aria-hidden="true">
-              <svg class="seal-text" viewBox="0 0 100 100">
-                <defs>
-                  <path id="sealPath" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0"/>
-                </defs>
-                <text><textPath href="#sealPath">CREATIVE DEVELOPER · AI ENTHUSIAST · </textPath></text>
-              </svg>
-              <svg class="seal-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M12 3v18M3 12h18M6 6l12 12M18 6 6 18"/></svg>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="wrap">
-        <div class="hero-facts reveal" style="--delay:380ms">
-          <div class="fact">
-            <span class="fact-k">Education</span>
-            <span class="fact-v">BCA · MDU University</span>
-          </div>
-          <div class="fact">
-            <span class="fact-k">School</span>
-            <span class="fact-v">DAV Police Public School</span>
-          </div>
-          <div class="fact">
-            <span class="fact-k">Course</span>
-            <span class="fact-v">Digital Marketing with AI</span>
-          </div>
-          <div class="fact">
-            <span class="fact-k">Based in</span>
-            <span class="fact-v">Kaithal, Haryana</span>
+            <span class="chip chip--top">BCA · MDU</span>
+            <span class="chip chip--bottom">Kaithal, IN</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ================= MARQUEE ================= -->
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee-track">
-        <div class="marquee-group">
-          <span>Web Development</span><i>✳</i>
-          <span>Artificial Intelligence</span><i>✳</i>
-          <span>Digital Marketing</span><i>✳</i>
-          <span>Visual Design</span><i>✳</i>
-          <span>Content Creation</span><i>✳</i>
-          <span>Creative Problem Solving</span><i>✳</i>
-        </div>
-        <div class="marquee-group">
-          <span>Web Development</span><i>✳</i>
-          <span>Artificial Intelligence</span><i>✳</i>
-          <span>Digital Marketing</span><i>✳</i>
-          <span>Visual Design</span><i>✳</i>
-          <span>Content Creation</span><i>✳</i>
-          <span>Creative Problem Solving</span><i>✳</i>
-        </div>
-      </div>
-    </div>
-
-    <!-- ================= ABOUT ================= -->
-    <section class="section" id="about">
-      <div class="wrap">
-        <div class="section-head reveal">
+    <!-- ==========================================================
+         PROJECTS
+         ========================================================== -->
+    <section class="section" id="projects">
+      <div class="container">
+        <header class="section-head reveal">
           <div>
-            <span class="section-tag">01 — About Me</span>
-            <h2 class="section-title">Curious by Nature. <em>Creative by Passion.</em></h2>
+            <span class="section-tag">01 — Projects</span>
+            <h2 class="section-title">Things I've <span class="grad-text">Created</span></h2>
           </div>
           <p class="section-lede">
-            A closer look at who I am, the skills I'm building and the path I'm taking.
-          </p>
-        </div>
-
-        <div class="about-grid">
-          <div class="about-visual reveal">
-            <span class="about-dots" aria-hidden="true"></span>
-            <span class="about-accent" aria-hidden="true"></span>
-            <div class="about-frame">
-              <img src="assets/images/about-placeholder.svg" alt="Illustrated placeholder portrait of Naina Jangra" width="900" height="1125" loading="lazy">
-            </div>
-            <span class="about-badge">Kaithal, Haryana</span>
-          </div>
-
-          <div class="about-body reveal" style="--delay:120ms">
-            <p class="about-lead">
-              I'm <strong>Naina Jangra</strong> — an aspiring web developer, AI enthusiast and
-              digital creator from Kaithal, Haryana.
-            </p>
-            <p>
-              I'm currently pursuing <strong>BCA at MDU University</strong> while learning
-              <strong>Digital Marketing with AI</strong>. My interests sit where technology and
-              creativity meet: building websites, exploring AI tools and turning ideas into
-              visuals, content and small digital experiences.
-            </p>
-            <p>
-              I'm still early in this journey, and that's part of what makes it exciting. Every
-              project is a chance to practise the fundamentals, ask better questions and
-              understand how thoughtful design and technology can work together.
-            </p>
-
-            <div class="about-approach">
-              <span>My approach</span>
-              <p>“Learn with curiosity. Build with intention.”</p>
-            </div>
-
-            <div class="about-facts">
-              <div class="mini-fact">
-                <span>Based in</span>
-                <b>Kaithal, Haryana · India</b>
-              </div>
-              <div class="mini-fact">
-                <span>School</span>
-                <b>DAV Police Public School</b>
-              </div>
-              <div class="mini-fact">
-                <span>Board</span>
-                <b>CBSE</b>
-              </div>
-              <div class="mini-fact">
-                <span>Current education</span>
-                <b>BCA · MDU University</b>
-              </div>
-              <div class="mini-fact mini-fact--wide">
-                <span>Course</span>
-                <b>Digital Marketing with AI</b>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="about-block" aria-labelledby="about-do-title">
-          <div class="about-block-head reveal">
-            <div>
-              <span class="section-tag">What I Do</span>
-              <h3 class="section-title about-block-title" id="about-do-title">Skills I'm <em>building.</em></h3>
-            </div>
-            <p>
-              Six areas where I'm learning, experimenting and building confidence — one small
-              project at a time.
-            </p>
-          </div>
-
-          <div class="about-do-grid">
-            <article class="about-do-card reveal" data-tilt style="--delay:0ms">
-              <div class="about-do-top">
-                <span class="about-do-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M14 5l-4 14"/></svg>
-                </span>
-                <span class="about-do-num">01</span>
-              </div>
-              <h4>Web Development</h4>
-              <p>Learning to build responsive, accessible pages with HTML, CSS and JavaScript — from structure and typography to small interactions.</p>
-            </article>
-
-            <article class="about-do-card reveal" data-tilt style="--delay:70ms">
-              <div class="about-do-top">
-                <span class="about-do-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 3l1.5 4.5L17 9l-4.5 1.5L11 15l-1.5-4.5L5 9l4.5-1.5L11 3Z"/><path d="M18 14l.8 2.2L21 17l-2.2.8L18 20l-.8-2.2L15 17l2.2-.8L18 14Z"/></svg>
-                </span>
-                <span class="about-do-num">02</span>
-              </div>
-              <h4>AI Tools &amp; Technology</h4>
-              <p>Exploring AI assistants and generative tools as practical partners for learning, ideation and everyday creative work.</p>
-            </article>
-
-            <article class="about-do-card reveal" data-tilt style="--delay:140ms">
-              <div class="about-do-top">
-                <span class="about-do-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 4.5 4.5M8 12v-2M10.5 12V8M13 12V9.5"/></svg>
-                </span>
-                <span class="about-do-num">03</span>
-              </div>
-              <h4>Digital Marketing &amp; SEO Basics</h4>
-              <p>Studying search, content and social fundamentals to understand how ideas reach the right people online.</p>
-            </article>
-
-            <article class="about-do-card reveal" data-tilt style="--delay:0ms">
-              <div class="about-do-top">
-                <span class="about-do-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/><path d="M14.5 5.5 18.5 9.5"/></svg>
-                </span>
-                <span class="about-do-num">04</span>
-              </div>
-              <h4>AI Content Creation</h4>
-              <p>Experimenting with AI-assisted writing, visuals and brainstorming while keeping the final edit thoughtful and human.</p>
-            </article>
-
-            <article class="about-do-card reveal" data-tilt style="--delay:70ms">
-              <div class="about-do-top">
-                <span class="about-do-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="8" cy="10" r="1.3"/><path d="m4 16 5-5 4 4 3-3 4 4"/></svg>
-                </span>
-                <span class="about-do-num">05</span>
-              </div>
-              <h4>Creative Video &amp; Image Design</h4>
-              <p>Practising image composition, short-form video ideas and motion details that help a project tell its story.</p>
-            </article>
-
-            <article class="about-do-card reveal" data-tilt style="--delay:140ms">
-              <div class="about-do-top">
-                <span class="about-do-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10h3M8.5 8.5v3M15.5 10h.01M17.5 12h.01"/><path d="M17.5 6.5h-11a4 4 0 0 0-4 4v5a3 3 0 0 0 5.5 1.7l1-1.7h6l1 1.7a3 3 0 0 0 5.5-1.7v-5a4 4 0 0 0-4-4Z"/></svg>
-                </span>
-                <span class="about-do-num">06</span>
-              </div>
-              <h4>Website &amp; Game Projects</h4>
-              <p>Turning practice into small builds — websites, interactive experiments and games — to see how the pieces fit together.</p>
-            </article>
-          </div>
-        </div>
-
-        <div class="about-block" aria-labelledby="about-journey-title">
-          <div class="about-block-head reveal">
-            <div>
-              <span class="section-tag">My Journey</span>
-              <h3 class="section-title about-block-title" id="about-journey-title">The path <em>so far.</em></h3>
-            </div>
-            <p>
-              A simple look at the steps that have shaped my direction so far — and where I want
-              to go next.
-            </p>
-          </div>
-
-          <div class="about-journey-track">
-            <ol class="journey-timeline">
-              <li class="journey-item reveal" style="--delay:0ms">
-                <div class="journey-card">
-                  <span class="journey-label">Foundation</span>
-                  <h4>Schooling at DAV Police Public School</h4>
-                  <p>My school years at DAV Police Public School in Kaithal — the starting point for my early education and curiosity about learning.</p>
-                </div>
-              </li>
-              <li class="journey-item reveal" style="--delay:60ms">
-                <div class="journey-card">
-                  <span class="journey-label">CBSE</span>
-                  <h4>Completed 12th from CBSE Board</h4>
-                  <p>Completed senior secondary education under the CBSE board, building a base for the next step in my learning journey.</p>
-                </div>
-              </li>
-              <li class="journey-item reveal" style="--delay:120ms">
-                <div class="journey-card">
-                  <span class="journey-label">Present</span>
-                  <h4>Currently pursuing BCA at MDU University</h4>
-                  <p>Studying computer applications while continuing to learn through practice, projects and self-directed exploration.</p>
-                </div>
-              </li>
-              <li class="journey-item reveal" style="--delay:0ms">
-                <div class="journey-card">
-                  <span class="journey-label">Course</span>
-                  <h4>Learning Digital Marketing with AI</h4>
-                  <p>Exploring digital marketing fundamentals and how AI can support research, content and creative workflows.</p>
-                </div>
-              </li>
-              <li class="journey-item reveal" style="--delay:60ms">
-                <div class="journey-card">
-                  <span class="journey-label">Exploring</span>
-                  <h4>Exploring AI Tools and Prompt Engineering</h4>
-                  <p>Testing AI tools, improving prompts and learning to question, verify and refine the output with a critical eye.</p>
-                </div>
-              </li>
-              <li class="journey-item reveal" style="--delay:120ms">
-                <div class="journey-card journey-card--goal">
-                  <span class="journey-label">Future Goal</span>
-                  <h4>Grow as a skilled developer and digital creator</h4>
-                  <p>Keep building useful things, strengthen the fundamentals and turn curiosity into thoughtful digital work.</p>
-                </div>
-              </li>
-            </ol>
-          </div>
-        </div>
-
-        <div class="about-block" aria-labelledby="about-learning-title">
-          <div class="about-block-head reveal">
-            <div>
-              <span class="section-tag">What I'm Learning</span>
-              <h3 class="section-title about-block-title" id="about-learning-title">Tools I'm <em>exploring.</em></h3>
-            </div>
-            <p>
-              A working list of the tools and topics I'm actively learning. Each one is part of
-              the process, not a finished destination.
-            </p>
-          </div>
-
-          <div class="learning-grid">
-            <article class="learning-card reveal" style="--delay:0ms">
-              <span class="learning-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M14 5l-4 14"/></svg></span>
-              <div class="learning-copy"><h4>HTML</h4><span>Markup</span></div>
-            </article>
-            <article class="learning-card reveal" style="--delay:40ms">
-              <span class="learning-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 7l8 4 8-4-8-4Z"/><path d="m4 12 8 4 8-4M4 17l8 4 8-4"/></svg></span>
-              <div class="learning-copy"><h4>CSS</h4><span>Layout &amp; style</span></div>
-            </article>
-            <article class="learning-card reveal" style="--delay:80ms">
-              <span class="learning-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z"/></svg></span>
-              <div class="learning-copy"><h4>JavaScript</h4><span>Interaction</span></div>
-            </article>
-            <article class="learning-card reveal" style="--delay:120ms">
-              <span class="learning-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2L12 2Z"/></svg></span>
-              <div class="learning-copy"><h4>Gemini</h4><span>AI tools</span></div>
-            </article>
-            <article class="learning-card reveal" style="--delay:0ms">
-              <span class="learning-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M4.2 7.5l15.6 9M19.8 7.5l-15.6 9"/></svg></span>
-              <div class="learning-copy"><h4>Claude</h4><span>AI assistance</span></div>
-            </article>
-            <article class="learning-card reveal" style="--delay:40ms">
-              <span class="learning-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="m7 9 3 3-3 3M13 15h4"/></svg></span>
-              <div class="learning-copy"><h4>OpenCode</h4><span>AI coding</span></div>
-            </article>
-            <article class="learning-card reveal" style="--delay:80ms">
-              <span class="learning-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m8 6-4 6 4 6M16 6l4 6-4 6M14 4l-4 16"/></svg></span>
-              <div class="learning-copy"><h4>VS Code</h4><span>Development</span></div>
-            </article>
-            <article class="learning-card reveal" style="--delay:120ms">
-              <span class="learning-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="8" r="2"/><path d="M6 8v8M18 10v1a5 5 0 0 1-5 5H6"/></svg></span>
-              <div class="learning-copy"><h4>GitHub</h4><span>Version control</span></div>
-            </article>
-            <article class="learning-card reveal" style="--delay:0ms">
-              <span class="learning-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H8l-4 4V5Z"/><path d="M8 9h8M8 12h5"/></svg></span>
-              <div class="learning-copy"><h4>Prompt Engineering</h4><span>AI practice</span></div>
-            </article>
-            <article class="learning-card reveal" style="--delay:40ms">
-              <span class="learning-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.6 4.4L18 9l-4.4 1.6L12 15l-1.6-4.4L6 9l4.4-1.6L12 3Z"/><path d="M18.5 14l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8.8-2.2Z"/></svg></span>
-              <div class="learning-copy"><h4>Generative AI</h4><span>AI practice</span></div>
-            </article>
-            <article class="learning-card reveal" style="--delay:80ms">
-              <span class="learning-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span>
-              <div class="learning-copy"><h4>Digital Marketing</h4><span>SEO &amp; content</span></div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= SKILLS ================= -->
-    <section class="section warm-section" id="skills">
-      <div class="wrap">
-        <header class="warm-head reveal">
-          <span class="warm-tag">02 — Skills</span>
-          <h2 class="warm-title warm-title--skills"><span class="warm-title-line">What I'm Learning</span> <em>&amp; My Skills</em></h2>
-          <p class="warm-lede">
-            The tools I use today and the skills I'm actively developing — shown honestly,
-            with no invented percentage scores.
+            A selection of websites and digital experiments I've built while learning.
           </p>
         </header>
 
-        <div class="skills-orbit-shell">
-          <div class="skills-orbit reveal">
-            <span class="orbit-ring orbit-ring--outer" aria-hidden="true"></span>
-            <span class="orbit-ring orbit-ring--inner" aria-hidden="true"></span>
-            <span class="orbit-ring orbit-ring--core" aria-hidden="true"></span>
-
-            <div class="orbit-core" aria-hidden="true">
-              <strong>15</strong>
-              <span>tools &amp; skills</span>
-            </div>
-
-            <div class="orbit-track orbit-track--outer">
-              <ul class="orbit-items" aria-label="Tools and AI platforms I use">
-              <li class="orbit-item" style="--left: 50.00%; --top: 9.50%; --delay: 60ms;">
-                <div class="orbit-content">
-                  <span class="orbit-icon"><img src="assets/icons/skills/claude.svg" alt="" width="28" height="28"></span>
-                  <span class="orbit-name">Claude</span>
-                </div>
-              </li>
-              <li class="orbit-item" style="--left: 76.03%; --top: 18.97%; --delay: 92ms;">
-                <div class="orbit-content">
-                  <span class="orbit-icon"><img src="assets/icons/skills/chatgpt.svg" alt="" width="28" height="28"></span>
-                  <span class="orbit-name">ChatGPT</span>
-                </div>
-              </li>
-              <li class="orbit-item" style="--left: 89.88%; --top: 42.97%; --delay: 124ms;">
-                <div class="orbit-content">
-                  <span class="orbit-icon"><img src="assets/icons/skills/opencode.svg" alt="" width="28" height="28"></span>
-                  <span class="orbit-name">OpenCode</span>
-                </div>
-              </li>
-              <li class="orbit-item" style="--left: 85.07%; --top: 70.25%; --delay: 156ms;">
-                <div class="orbit-content">
-                  <span class="orbit-icon"><img src="assets/icons/skills/vscode.svg" alt="" width="28" height="28"></span>
-                  <span class="orbit-name">VS Code</span>
-                </div>
-              </li>
-              <li class="orbit-item" style="--left: 63.85%; --top: 88.06%; --delay: 188ms;">
-                <div class="orbit-content">
-                  <span class="orbit-icon"><img src="assets/icons/skills/replit.svg" alt="" width="28" height="28"></span>
-                  <span class="orbit-name">Replit</span>
-                </div>
-              </li>
-              <li class="orbit-item" style="--left: 36.15%; --top: 88.06%; --delay: 220ms;">
-                <div class="orbit-content">
-                  <span class="orbit-icon"><span class="orbit-icon-pair"><img src="assets/icons/skills/git.svg" alt="" width="22" height="22"><img src="assets/icons/skills/github.svg" alt="" width="22" height="22"></span></span>
-                  <span class="orbit-name">Git &amp; GitHub</span>
-                </div>
-              </li>
-              <li class="orbit-item" style="--left: 14.93%; --top: 70.25%; --delay: 252ms;">
-                <div class="orbit-content">
-                  <span class="orbit-icon"><img src="assets/icons/skills/vercel.svg" alt="" width="28" height="28"></span>
-                  <span class="orbit-name">Vercel</span>
-                </div>
-              </li>
-              <li class="orbit-item" style="--left: 10.12%; --top: 42.97%; --delay: 284ms;">
-                <div class="orbit-content">
-                  <span class="orbit-icon"><img src="assets/icons/skills/html5.svg" alt="" width="28" height="28"></span>
-                  <span class="orbit-name">HTML5</span>
-                </div>
-              </li>
-              <li class="orbit-item" style="--left: 23.97%; --top: 18.97%; --delay: 316ms;">
-                <div class="orbit-content">
-                  <span class="orbit-icon"><img src="assets/icons/skills/css3.svg" alt="" width="28" height="28"></span>
-                  <span class="orbit-name">CSS3</span>
-                </div>
-              </li>
-              </ul>
-            </div>
-
-            <div class="orbit-track orbit-track--inner">
-              <ul class="orbit-items" aria-label="Development and marketing skills I am learning">
-              <li class="orbit-item" style="--left: 61.00%; --top: 30.95%; --delay: 348ms;">
-                <div class="orbit-content">
-                  <span class="orbit-icon"><img src="assets/icons/skills/javascript.svg" alt="" width="28" height="28"></span>
-                  <span class="orbit-name">JavaScript</span>
-                </div>
-              </li>
-              <li class="orbit-item" style="--left: 72.00%; --top: 50.00%; --delay: 380ms;">
-                <div class="orbit-content">
-                  <span class="orbit-icon"><img src="assets/icons/skills/react.svg" alt="" width="28" height="28"></span>
-                  <span class="orbit-name">React</span>
-                </div>
-              </li>
-              <li class="orbit-item" style="--left: 61.00%; --top: 69.05%; --delay: 412ms;">
-                <div class="orbit-content">
-                  <span class="orbit-icon"><img src="assets/icons/skills/nodejs.svg" alt="" width="28" height="28"></span>
-                  <span class="orbit-name">Node.js</span>
-                </div>
-              </li>
-              <li class="orbit-item" style="--left: 39.00%; --top: 69.05%; --delay: 444ms;">
-                <div class="orbit-content">
-                  <span class="orbit-icon"><img src="assets/icons/skills/digital-marketing.svg" alt="" width="28" height="28"></span>
-                  <span class="orbit-name">Digital Marketing</span>
-                </div>
-              </li>
-              <li class="orbit-item" style="--left: 28.00%; --top: 50.00%; --delay: 476ms;">
-                <div class="orbit-content">
-                  <span class="orbit-icon"><img src="assets/icons/skills/prompt-engineering.svg" alt="" width="28" height="28"></span>
-                  <span class="orbit-name">Prompt Engineering</span>
-                </div>
-              </li>
-              <li class="orbit-item" style="--left: 39.00%; --top: 30.95%; --delay: 508ms;">
-                <div class="orbit-content">
-                  <span class="orbit-icon"><img src="assets/icons/skills/generative-ai.svg" alt="" width="28" height="28"></span>
-                  <span class="orbit-name">Generative AI</span>
-                </div>
-              </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="warm-skills-foot reveal">
-          <span>Currently learning</span>
-          <p>Digital Marketing with AI · BCA at MDU University · AI-assisted creative workflows</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= PROJECTS ================= -->
-    <section class="section" id="projects">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <div>
-            <span class="section-tag">03 — Projects</span>
-            <h2 class="section-title">Things I've <em>Created</em></h2>
-          </div>
-          <p class="section-lede">
-            A collection of my digital experiments, websites and creative projects.
-          </p>
-        </div>
-
-        <div class="projects-list">
+        <div class="projects-grid">
 
           <!-- 01 -->
-          <article class="project reveal" data-tilt>
-            <div class="project-media" data-spotlight>
-              <div class="preview preview--site" role="img" aria-label="Preview artwork for the DAV Police Public School Website" style="--p-bg:#1B2030;--p-ink:#F5F3F8;--p-accent:#D9C9EB;">
-                <div class="preview-bar">
-                  <span class="preview-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-                  <span class="preview-url">dav pps · concept</span>
-                </div>
-                <div class="site-preview">
-                  <div class="sp-nav"><b>DAV</b><span>About</span><span>Academics</span><span>Admissions</span><span>Contact</span></div>
-                  <div class="sp-body">
-                    <div>
-                      <span class="sp-kicker">Admissions open</span>
-                      <h4>Learning with purpose.</h4>
-                      <p>A calm, welcoming school website with clear information for parents and students.</p>
-                      <span class="sp-btn">Explore</span>
-                    </div>
-                    <div class="sp-art" aria-hidden="true"><span class="sp-arch"></span><span class="sp-circle"></span></div>
-                  </div>
-                  <div class="sp-strip" aria-hidden="true"><span></span><span></span><span></span></div>
-                </div>
-              </div>
+          <article class="card project-card reveal">
+            <div class="project-shot">
+              <!-- TODO (SCREENSHOT): <img src="assets/images/projects/dav-school.webp" alt="DAV Police Public School website homepage" width="1200" height="750" loading="lazy"> -->
+              <span class="project-num" aria-hidden="true">01</span>
             </div>
             <div class="project-body">
-              <div class="project-meta"><span class="project-index">01</span><span class="project-tag">Web Development</span></div>
+              <span class="project-tag">Web Development</span>
               <h3>DAV Police Public School Website</h3>
               <p class="project-desc">
-                A modern school website project featuring school information, gallery and responsive design.
+                A modern school website featuring school information, gallery and a
+                fully responsive layout.
               </p>
-              <div class="project-stack"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Responsive</span></div>
+              <ul class="tags" aria-label="Technologies used">
+                <li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>Responsive</li>
+              </ul>
               <div class="project-actions">
-                <button class="project-link project-link--disabled" type="button" disabled aria-disabled="true">
-                  View Project
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                <!-- TODO (LIVE URL): when this project is online, replace the disabled button with:
+                     <a class="live-btn" href="https://your-live-url" target="_blank" rel="noopener noreferrer">Live <svg …/></a> -->
+                <button class="live-btn" type="button" disabled aria-disabled="true">
+                  Live
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
                 </button>
-                <span class="project-soon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-                  Live link coming soon
-                </span>
               </div>
             </div>
           </article>
 
           <!-- 02 -->
-          <article class="project project--reverse reveal" data-tilt>
-            <div class="project-media" data-spotlight>
-              <div class="preview preview--site" role="img" aria-label="Preview artwork for the Maa Mansa Devi Glass Works Website" style="--p-bg:#1B2030;--p-ink:#F5F3F8;--p-accent:#D9C9EB;">
-                <div class="preview-bar">
-                  <span class="preview-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-                  <span class="preview-url">glass works · concept</span>
-                </div>
-                <div class="site-preview">
-                  <div class="sp-nav"><b>MMD</b><span>Collections</span><span>Craft</span><span>Projects</span><span>Contact</span></div>
-                  <div class="sp-body">
-                    <div>
-                      <span class="sp-kicker">Handcrafted glass</span>
-                      <h4>Crafted with clarity.</h4>
-                      <p>A warm, premium home for a glass works studio and its craft.</p>
-                      <span class="sp-btn">View work</span>
-                    </div>
-                    <div class="sp-art" aria-hidden="true"><span class="sp-arch"></span><span class="sp-circle"></span></div>
-                  </div>
-                  <div class="sp-strip" aria-hidden="true"><span></span><span></span><span></span></div>
-                </div>
-              </div>
+          <article class="card project-card reveal" style="--delay:70ms">
+            <div class="project-shot">
+              <!-- TODO (SCREENSHOT): <img src="assets/images/projects/glass-works.webp" alt="Maa Mansa Devi Glass Works website homepage" width="1200" height="750" loading="lazy"> -->
+              <span class="project-num" aria-hidden="true">02</span>
             </div>
             <div class="project-body">
-              <div class="project-meta"><span class="project-index">02</span><span class="project-tag">Business Website</span></div>
+              <span class="project-tag">Business Website</span>
               <h3>Maa Mansa Devi Glass Works Website</h3>
               <p class="project-desc">
-                A business website project showcasing glass products and business information.
+                A business website showcasing glass products and clear company information.
               </p>
-              <div class="project-stack"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Business</span></div>
+              <ul class="tags" aria-label="Technologies used">
+                <li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>Business</li>
+              </ul>
               <div class="project-actions">
-                <button class="project-link project-link--disabled" type="button" disabled aria-disabled="true">
-                  View Project
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                <!-- TODO (LIVE URL): enable the Live button when the site is deployed -->
+                <button class="live-btn" type="button" disabled aria-disabled="true">
+                  Live
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
                 </button>
-                <span class="project-soon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-                  Live link coming soon
-                </span>
               </div>
             </div>
           </article>
 
           <!-- 03 -->
-          <article class="project reveal" data-tilt>
-            <div class="project-media" data-spotlight>
-              <div class="preview preview--site" role="img" aria-label="Preview artwork for the Exotic Hair Beauty Salon Website" style="--p-bg:#25263A;--p-ink:#F5F3F8;--p-accent:#D9C9EB;">
-                <div class="preview-bar">
-                  <span class="preview-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-                  <span class="preview-url">salon · concept</span>
-                </div>
-                <div class="site-preview">
-                  <div class="sp-nav"><b>EXOTIC</b><span>Services</span><span>Gallery</span><span>About</span><span>Book</span></div>
-                  <div class="sp-body">
-                    <div>
-                      <span class="sp-kicker">Beauty studio</span>
-                      <h4>Beauty, refined.</h4>
-                      <p>A soft, editorial space for a modern salon and its services.</p>
-                      <span class="sp-btn">Book a visit</span>
-                    </div>
-                    <div class="sp-art" aria-hidden="true"><span class="sp-arch"></span><span class="sp-circle"></span></div>
-                  </div>
-                  <div class="sp-strip" aria-hidden="true"><span></span><span></span><span></span></div>
-                </div>
-              </div>
+          <article class="card project-card reveal">
+            <div class="project-shot">
+              <!-- TODO (SCREENSHOT): <img src="assets/images/projects/exotic-salon.webp" alt="Exotic Hair Beauty Salon website homepage" width="1200" height="750" loading="lazy"> -->
+              <span class="project-num" aria-hidden="true">03</span>
             </div>
             <div class="project-body">
-              <div class="project-meta"><span class="project-index">03</span><span class="project-tag">Web Development</span></div>
+              <span class="project-tag">Web Development</span>
               <h3>Exotic Hair Beauty Salon Website</h3>
               <p class="project-desc">
-                A modern salon website with attractive visuals and service presentation.
+                A modern salon website with attractive visuals and clear service presentation.
               </p>
-              <div class="project-stack"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Responsive</span></div>
+              <ul class="tags" aria-label="Technologies used">
+                <li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>Responsive</li>
+              </ul>
               <div class="project-actions">
-                <button class="project-link project-link--disabled" type="button" disabled aria-disabled="true">
-                  View Project
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                <!-- TODO (LIVE URL): enable the Live button when the site is deployed -->
+                <button class="live-btn" type="button" disabled aria-disabled="true">
+                  Live
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
                 </button>
-                <span class="project-soon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-                  Live link coming soon
-                </span>
               </div>
             </div>
           </article>
 
           <!-- 04 -->
-          <article class="project project--reverse reveal" data-tilt>
-            <div class="project-media" data-spotlight>
-              <div class="preview preview--app" role="img" aria-label="Preview artwork for the AI Chatbot project">
-                <div class="preview-bar">
-                  <span class="preview-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-                  <span class="preview-url">ai chatbot · concept</span>
-                </div>
-                <div class="app-preview">
-                  <div class="app-head">
-                    <span class="app-avatar">Ai</span>
-                    <div><b>Assistant</b><span>Ready to help</span></div>
-                  </div>
-                  <div class="bubbles">
-                    <p class="bubble bubble--in">Hello — how can I help you today?</p>
-                    <p class="bubble bubble--out">Tell me about the projects you've built.</p>
-                    <p class="bubble bubble--in">Happy to. Here are three recent builds across web, AI and design…</p>
-                  </div>
-                  <div class="chat-input"><span>Type a message…</span><i>↗</i></div>
-                </div>
-              </div>
+          <article class="card project-card reveal" style="--delay:70ms">
+            <div class="project-shot">
+              <!-- TODO (SCREENSHOT): <img src="assets/images/projects/ai-chatbot.webp" alt="AI chatbot interface project screenshot" width="1200" height="750" loading="lazy"> -->
+              <span class="project-num" aria-hidden="true">04</span>
             </div>
             <div class="project-body">
-              <div class="project-meta"><span class="project-index">04</span><span class="project-tag">Artificial Intelligence</span></div>
+              <span class="project-tag">Artificial Intelligence</span>
               <h3>AI Chatbot</h3>
               <p class="project-desc">
-                An AI-powered chatbot interface created as an experimental project.
+                An AI-powered chatbot interface built as an experimental project.
               </p>
-              <div class="project-stack"><span>AI Tools</span><span>Prompt Design</span><span>JavaScript</span></div>
+              <ul class="tags" aria-label="Technologies used">
+                <li>AI Tools</li><li>Prompt Design</li><li>JavaScript</li>
+              </ul>
               <div class="project-actions">
-                <button class="project-link project-link--disabled" type="button" disabled aria-disabled="true">
-                  View Project
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                <!-- TODO (LIVE URL): enable the Live button when the demo is hosted -->
+                <button class="live-btn" type="button" disabled aria-disabled="true">
+                  Live
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
                 </button>
-                <span class="project-soon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-                  Demo link coming soon
-                </span>
               </div>
             </div>
           </article>
 
           <!-- 05 -->
-          <article class="project reveal" data-tilt>
-            <div class="project-media" data-spotlight>
-              <div class="preview preview--app" role="img" aria-label="Preview artwork for AI Game Projects">
-                <div class="preview-bar">
-                  <span class="preview-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-                  <span class="preview-url">ai games · concept</span>
-                </div>
-                <div class="game-preview">
-                  <div class="game-head"><span>Memory match</span><span>Lab · 01</span></div>
-                  <div class="game-grid" aria-hidden="true">
-                    <span class="game-cell is-open">✦</span>
-                    <span class="game-cell">?</span>
-                    <span class="game-cell is-match">◐</span>
-                    <span class="game-cell">?</span>
-                    <span class="game-cell is-open">◐</span>
-                    <span class="game-cell">?</span>
-                    <span class="game-cell">?</span>
-                    <span class="game-cell is-match">✦</span>
-                    <span class="game-cell">?</span>
-                  </div>
-                </div>
-              </div>
+          <article class="card project-card reveal">
+            <div class="project-shot">
+              <!-- TODO (SCREENSHOT): <img src="assets/images/projects/ai-games.webp" alt="AI game project gameplay screenshot" width="1200" height="750" loading="lazy"> -->
+              <span class="project-num" aria-hidden="true">05</span>
             </div>
             <div class="project-body">
-              <div class="project-meta"><span class="project-index">05</span><span class="project-tag">Game Development</span></div>
+              <span class="project-tag">Game Development</span>
               <h3>AI Game Projects</h3>
               <p class="project-desc">
-                Interactive games created while exploring AI-powered development tools.
+                Interactive browser games created while exploring AI-powered development tools.
               </p>
-              <div class="project-stack"><span>JavaScript</span><span>AI Tools</span><span>Game Logic</span></div>
+              <ul class="tags" aria-label="Technologies used">
+                <li>JavaScript</li><li>AI Tools</li><li>Game Logic</li>
+              </ul>
               <div class="project-actions">
-                <button class="project-link project-link--disabled" type="button" disabled aria-disabled="true">
-                  View Project
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                <!-- TODO (LIVE URL): enable the Live button when the game is playable online -->
+                <button class="live-btn" type="button" disabled aria-disabled="true">
+                  Live
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
                 </button>
-                <span class="project-soon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-                  Playable link coming soon
-                </span>
               </div>
             </div>
           </article>
 
           <!-- 06 -->
-          <article class="project project--reverse reveal" data-tilt>
-            <div class="project-media" data-spotlight>
-              <div class="preview preview--app" role="img" aria-label="Preview artwork for AI Video &amp; Creative Projects">
-                <div class="preview-bar">
-                  <span class="preview-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-                  <span class="preview-url">ai video &amp; design · concept</span>
-                </div>
-                <div class="video-preview">
-                  <span class="vp-tag">AI video · study 01</span>
-                  <span class="vp-play" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5-11-6.5Z"/></svg>
-                  </span>
-                  <div class="vp-meta" aria-hidden="true">
-                    <span class="vp-line"><i></i></span>
-                    <span class="vp-row"><span>00:00</span><span>Preview</span></span>
-                  </div>
-                </div>
-              </div>
+          <article class="card project-card reveal" style="--delay:70ms">
+            <div class="project-shot">
+              <!-- TODO (SCREENSHOT): <img src="assets/images/projects/ai-video.webp" alt="AI video and creative project thumbnail" width="1200" height="750" loading="lazy"> -->
+              <span class="project-num" aria-hidden="true">06</span>
             </div>
             <div class="project-body">
-              <div class="project-meta"><span class="project-index">06</span><span class="project-tag">AI Creativity</span></div>
+              <span class="project-tag">AI Creativity</span>
               <h3>AI Video &amp; Creative Projects</h3>
               <p class="project-desc">
                 Creative videos, AI-generated visuals, animations and promotional content.
               </p>
-              <div class="project-stack"><span>AI Video</span><span>Editing</span><span>Creative Direction</span></div>
+              <ul class="tags" aria-label="Technologies used">
+                <li>AI Video</li><li>Editing</li><li>Creative Direction</li>
+              </ul>
               <div class="project-actions">
-                <button class="project-link project-link--disabled" type="button" disabled aria-disabled="true">
-                  View Project
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                <!-- TODO (LIVE URL): enable the Live button when a showreel link exists -->
+                <button class="live-btn" type="button" disabled aria-disabled="true">
+                  Live
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
                 </button>
-                <span class="project-soon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-                  Showreel coming soon
-                </span>
               </div>
             </div>
           </article>
 
         </div>
-
-        <p class="projects-note reveal">
-          Visuals shown are custom placeholder artwork. The View Project buttons stay disabled
-          until a real live link is available for each project.
-        </p>
       </div>
     </section>
 
-    <!-- ================= BLOG ================= -->
-    <section class="section section-alt blog-section" id="blog">
-      <div class="wrap">
-        <div class="blog-hero reveal">
-          <div class="blog-hero-copy">
-            <span class="blog-eyebrow">MY BLOG</span>
-            <h2 class="blog-hero-title">Insights, Ideas &amp; <em>Learning</em></h2>
-          </div>
-          <div class="blog-hero-aside">
-            <p class="blog-hero-lede">
-              Sharing my journey through web development, artificial intelligence, digital
-              marketing and creative technology.
-            </p>
-            <ul class="blog-hero-tags" aria-label="Blog topics">
-              <li>Web Development</li>
-              <li>AI</li>
-              <li>Digital Marketing</li>
-              <li>Learning</li>
-            </ul>
-            <span class="blog-draft-note"><i class="dot dot--sage" aria-hidden="true"></i>Draft topics · published when ready</span>
-          </div>
-        </div>
-
-        <div class="blog-posts-head reveal">
+    <!-- ==========================================================
+         SKILLS — Frontend · AI Tools · Digital Marketing
+         ========================================================== -->
+    <section class="section section--tint" id="skills">
+      <div class="container">
+        <header class="section-head reveal">
           <div>
-            <span class="section-tag">All posts</span>
-            <h3 class="blog-list-title">Ideas in <em>progress.</em></h3>
+            <span class="section-tag">02 — Skills</span>
+            <h2 class="section-title">What I'm <span class="grad-text">Building</span> With</h2>
           </div>
-          <p class="blog-count" id="blog-count" aria-live="polite">6 draft posts</p>
-        </div>
-
-        <div class="blog-filters reveal" role="group" aria-label="Filter blog posts">
-          <button class="filter-btn active" type="button" data-filter="all" aria-pressed="true" aria-controls="blog-grid">All Posts</button>
-          <button class="filter-btn" type="button" data-filter="web-development" aria-pressed="false" aria-controls="blog-grid">Web Development</button>
-          <button class="filter-btn" type="button" data-filter="artificial-intelligence" aria-pressed="false" aria-controls="blog-grid" aria-label="Filter Artificial Intelligence posts">AI</button>
-          <button class="filter-btn" type="button" data-filter="digital-marketing" aria-pressed="false" aria-controls="blog-grid">Digital Marketing</button>
-          <button class="filter-btn" type="button" data-filter="projects" aria-pressed="false" aria-controls="blog-grid">Projects</button>
-          <button class="filter-btn" type="button" data-filter="programming" aria-pressed="false" aria-controls="blog-grid">Programming</button>
-          <button class="filter-btn" type="button" data-filter="learning" aria-pressed="false" aria-controls="blog-grid">Learning</button>
-        </div>
-
-        <div class="blog-grid" id="blog-grid">
-          <!-- 01 -->
-          <article class="blog-card reveal" data-tilt data-category="web-development" style="--delay:0ms">
-            <div class="blog-thumb" aria-hidden="true">
-              <img src="assets/images/blog/web-development.svg" alt="" width="1200" height="750" loading="lazy">
-              <span class="blog-thumb-shade"></span>
-              <span class="blog-thumb-mark">01</span>
-            </div>
-            <div class="blog-body">
-              <div class="blog-meta">
-                <span class="blog-category">Web Development</span>
-                <span class="blog-status">Draft</span>
-              </div>
-              <h3><a href="blog.html?post=my-journey-into-web-development">My Journey into Web Development</a></h3>
-              <p class="blog-desc">My experience learning HTML, CSS, JavaScript and building my first websites.</p>
-              <div class="blog-foot">
-                <a class="blog-more" href="blog.html?post=my-journey-into-web-development" aria-label="Read More: My Journey into Web Development">
-                  Read More
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 02 -->
-          <article class="blog-card reveal" data-tilt data-category="artificial-intelligence" style="--delay:70ms">
-            <div class="blog-thumb" aria-hidden="true">
-              <img src="assets/images/blog/artificial-intelligence.svg" alt="" width="1200" height="750" loading="lazy">
-              <span class="blog-thumb-shade"></span>
-              <span class="blog-thumb-mark">02</span>
-            </div>
-            <div class="blog-body">
-              <div class="blog-meta">
-                <span class="blog-category">Artificial Intelligence</span>
-                <span class="blog-status">Draft</span>
-              </div>
-              <h3><a href="blog.html?post=exploring-artificial-intelligence">Exploring Artificial Intelligence</a></h3>
-              <p class="blog-desc">My learning experience with AI tools, prompt engineering and generative AI.</p>
-              <div class="blog-foot">
-                <a class="blog-more" href="blog.html?post=exploring-artificial-intelligence" aria-label="Read More: Exploring Artificial Intelligence">
-                  Read More
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 03 -->
-          <article class="blog-card reveal" data-tilt data-category="digital-marketing" style="--delay:140ms">
-            <div class="blog-thumb" aria-hidden="true">
-              <img src="assets/images/blog/digital-marketing.svg" alt="" width="1200" height="750" loading="lazy">
-              <span class="blog-thumb-shade"></span>
-              <span class="blog-thumb-mark">03</span>
-            </div>
-            <div class="blog-body">
-              <div class="blog-meta">
-                <span class="blog-category">Digital Marketing</span>
-                <span class="blog-status">Draft</span>
-              </div>
-              <h3><a href="blog.html?post=learning-digital-marketing-with-ai">Learning Digital Marketing with AI</a></h3>
-              <p class="blog-desc">Exploring SEO basics, social media marketing and AI-powered content creation.</p>
-              <div class="blog-foot">
-                <a class="blog-more" href="blog.html?post=learning-digital-marketing-with-ai" aria-label="Read More: Learning Digital Marketing with AI">
-                  Read More
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 04 -->
-          <article class="blog-card reveal" data-tilt data-category="projects" style="--delay:0ms">
-            <div class="blog-thumb" aria-hidden="true">
-              <img src="assets/images/blog/projects.svg" alt="" width="1200" height="750" loading="lazy">
-              <span class="blog-thumb-shade"></span>
-              <span class="blog-thumb-mark">04</span>
-            </div>
-            <div class="blog-body">
-              <div class="blog-meta">
-                <span class="blog-category">Projects</span>
-                <span class="blog-status">Draft</span>
-              </div>
-              <h3><a href="blog.html?post=my-first-website-projects">My First Website Projects</a></h3>
-              <p class="blog-desc">Lessons learned while creating websites for schools and small businesses.</p>
-              <div class="blog-foot">
-                <a class="blog-more" href="blog.html?post=my-first-website-projects" aria-label="Read More: My First Website Projects">
-                  Read More
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 05 -->
-          <article class="blog-card reveal" data-tilt data-category="programming" style="--delay:70ms">
-            <div class="blog-thumb" aria-hidden="true">
-              <img src="assets/images/blog/programming.svg" alt="" width="1200" height="750" loading="lazy">
-              <span class="blog-thumb-shade"></span>
-              <span class="blog-thumb-mark">05</span>
-            </div>
-            <div class="blog-body">
-              <div class="blog-meta">
-                <span class="blog-category">Programming</span>
-                <span class="blog-status">Draft</span>
-              </div>
-              <h3><a href="blog.html?post=learning-github-and-version-control">Learning GitHub and Version Control</a></h3>
-              <p class="blog-desc">My experience exploring repositories, commits, branches and GitHub.</p>
-              <div class="blog-foot">
-                <a class="blog-more" href="blog.html?post=learning-github-and-version-control" aria-label="Read More: Learning GitHub and Version Control">
-                  Read More
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 06 -->
-          <article class="blog-card reveal" data-tilt data-category="learning" style="--delay:140ms">
-            <div class="blog-thumb" aria-hidden="true">
-              <img src="assets/images/blog/learning.svg" alt="" width="1200" height="750" loading="lazy">
-              <span class="blog-thumb-shade"></span>
-              <span class="blog-thumb-mark">06</span>
-            </div>
-            <div class="blog-body">
-              <div class="blog-meta">
-                <span class="blog-category">Learning</span>
-                <span class="blog-status">Draft</span>
-              </div>
-              <h3><a href="blog.html?post=my-creative-learning-journey">My Creative Learning Journey</a></h3>
-              <p class="blog-desc">How I explore new technologies, experiment with tools and improve my digital skills.</p>
-              <div class="blog-foot">
-                <a class="blog-more" href="blog.html?post=my-creative-learning-journey" aria-label="Read More: My Creative Learning Journey">
-                  Read More
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                </a>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <p class="blog-note reveal">
-          These are editable draft topics, not published articles. Open any Read More link to
-          explore the full draft preview; publication dates will be added only when available.
-        </p>
-      </div>
-    </section>
-
-    <!-- ================= EDUCATION ================= -->
-    <section class="section warm-section warm-section--education" id="education">
-      <div class="wrap">
-        <header class="warm-head reveal">
-          <span class="warm-tag">05 — Education</span>
-          <h2 class="warm-title">How I Got <em>Here</em></h2>
-          <p class="warm-lede">
-            Every step taught me something new — from school to the work I'm building today.
+          <p class="section-lede">
+            The tools and topics I work with today — grouped honestly, without invented scores.
           </p>
         </header>
 
-        <div class="edu-timeline" id="timeline">
-          <article class="edu-step reveal">
-            <div class="edu-card">
-              <span class="edu-index" aria-hidden="true">01</span>
-              <h3>DAV Police Public School</h3>
-              <p class="edu-meta">CBSE Board</p>
-              <p>Class 12 completed.</p>
+        <div class="skills-grid">
+
+          <article class="card skill-card reveal">
+            <div class="skill-head">
+              <span class="skill-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M14 4l-4 16"/></svg>
+              </span>
+              <h3>Frontend</h3>
             </div>
+            <p class="skill-desc">Markup, styling and interaction — the core of everything I build.</p>
+            <ul class="skill-list">
+              <li><img src="assets/icons/skills/html5.svg" alt="" width="20" height="20" loading="lazy">HTML5</li>
+              <li><img src="assets/icons/skills/css3.svg" alt="" width="20" height="20" loading="lazy">CSS3</li>
+              <li><img src="assets/icons/skills/javascript.svg" alt="" width="20" height="20" loading="lazy">JavaScript</li>
+              <li><img src="assets/icons/skills/react.svg" alt="" width="20" height="20" loading="lazy">React</li>
+              <li><img src="assets/icons/skills/nodejs.svg" alt="" width="20" height="20" loading="lazy">Node.js</li>
+              <li><span class="pair"><img src="assets/icons/skills/git.svg" alt="" width="16" height="16" loading="lazy"><img src="assets/icons/skills/github.svg" alt="" width="16" height="16" loading="lazy"></span>Git &amp; GitHub</li>
+              <li><img src="assets/icons/skills/vscode.svg" alt="" width="20" height="20" loading="lazy">VS Code</li>
+              <li><img src="assets/icons/skills/vercel.svg" alt="" width="20" height="20" loading="lazy">Vercel</li>
+              <li><img src="assets/icons/skills/replit.svg" alt="" width="20" height="20" loading="lazy">Replit</li>
+            </ul>
           </article>
 
-          <article class="edu-step reveal" style="--delay:90ms">
-            <div class="edu-card">
-              <span class="edu-index" aria-hidden="true">02</span>
-              <h3>BCA at MDU University</h3>
-              <p class="edu-meta">Degree</p>
-              <p>Currently pursuing BCA at MDU University.</p>
+          <article class="card skill-card reveal" style="--delay:80ms">
+            <div class="skill-head">
+              <span class="skill-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M11 3l1.5 4.5L17 9l-4.5 1.5L11 15l-1.5-4.5L5 9l4.5-1.5L11 3Z"/><path d="M18 14l.8 2.2L21 17l-2.2.8L18 20l-.8-2.2L15 17l2.2-.8L18 14Z"/></svg>
+              </span>
+              <h3>AI Tools</h3>
             </div>
+            <p class="skill-desc">AI assistants and generative tools I use for learning, ideation and faster building.</p>
+            <ul class="skill-list">
+              <li><img src="assets/icons/skills/chatgpt.svg" alt="" width="20" height="20" loading="lazy">ChatGPT</li>
+              <li><img src="assets/icons/skills/claude.svg" alt="" width="20" height="20" loading="lazy">Claude</li>
+              <li><img src="assets/icons/skills/opencode.svg" alt="" width="20" height="20" loading="lazy">OpenCode</li>
+              <li><img src="assets/icons/skills/generative-ai.svg" alt="" width="20" height="20" loading="lazy">Generative AI</li>
+              <li><img src="assets/icons/skills/prompt-engineering.svg" alt="" width="20" height="20" loading="lazy">Prompt Engineering</li>
+            </ul>
           </article>
 
-          <article class="edu-step reveal" style="--delay:180ms">
-            <div class="edu-card">
-              <span class="edu-index" aria-hidden="true">03</span>
-              <h3>Digital Marketing with AI</h3>
-              <p class="edu-meta">Course</p>
-              <p>Currently learning SEO basics, content creation and social media strategy.</p>
+          <article class="card skill-card reveal" style="--delay:160ms">
+            <div class="skill-head">
+              <span class="skill-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+              </span>
+              <h3>Digital Marketing</h3>
             </div>
+            <p class="skill-desc">Search, content and social fundamentals I'm studying right now.</p>
+            <ul class="skill-list">
+              <li><img src="assets/icons/skills/digital-marketing.svg" alt="" width="20" height="20" loading="lazy">Digital Marketing</li>
+              <li>
+                <svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16.5 16.5 4 4"/></svg>
+                SEO Basics
+              </li>
+              <li>
+                <svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+                Content Creation
+              </li>
+              <li>
+                <svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 3l1.5 4.5L17 9l-4.5 1.5L11 15l-1.5-4.5L5 9l4.5-1.5L11 3Z"/><path d="M18 15l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7.7-2Z"/></svg>
+                AI Content Creation
+              </li>
+              <li>
+                <svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.9 8.9 0 0 1-4-.9L3 21l1.9-4.9A8.4 8.4 0 0 1 12 3a8.4 8.4 0 0 1 9 8.5Z"/></svg>
+                Social Media Strategy
+              </li>
+            </ul>
           </article>
 
-          <article class="edu-step reveal" style="--delay:270ms">
-            <div class="edu-card">
-              <span class="edu-index" aria-hidden="true">04</span>
-              <h3>Learning AI Tools</h3>
-              <p class="edu-meta">Exploration</p>
-              <p>Exploring prompt engineering, generative AI and AI-assisted development.</p>
-            </div>
-          </article>
-
-          <article class="edu-step reveal" style="--delay:360ms">
-            <div class="edu-card edu-card--goal">
-              <span class="edu-index" aria-hidden="true">05</span>
-              <h3>My Goal</h3>
-              <p class="edu-meta">What's next</p>
-              <p>Keep learning and build useful websites and digital products.</p>
-            </div>
-          </article>
         </div>
       </div>
     </section>
 
-    <!-- ================= CONTACT ================= -->
-    <section class="section" id="contact">
-      <div class="wrap">
-        <div class="contact-panel reveal">
-          <div class="contact-copy">
-            <span class="section-tag">06 — Contact</span>
-            <h2>Have an idea?<br><em>Let's talk.</em></h2>
-            <p class="contact-lede">
-              Whether it's a website, a creative collaboration or a question about my work —
+    <!-- ==========================================================
+         ABOUT — bio + education + journey (merged)
+         ========================================================== -->
+    <section class="section" id="about">
+      <div class="container">
+        <header class="section-head reveal">
+          <div>
+            <span class="section-tag">03 — About</span>
+            <h2 class="section-title">Curious by nature.<br><span class="grad-text">Creative</span> by passion.</h2>
+          </div>
+          <p class="section-lede">
+            A short look at who I am, what I'm studying and where I'm heading.
+          </p>
+        </header>
+
+        <div class="about-grid">
+          <div class="about-visual reveal">
+            <div class="about-photo">
+              <!-- TODO (PHOTO): replace with a second photo or your favourite portrait:
+                   <img src="assets/images/naina-about.jpg" alt="Naina Jangra at work" width="720" height="900" loading="lazy"> -->
+              <span class="portrait-initials" aria-hidden="true">NJ</span>
+            </div>
+            <span class="about-badge">Kaithal, Haryana</span>
+          </div>
+
+          <div class="about-copy reveal" style="--delay:100ms">
+            <p class="about-lead">
+              I'm <strong>Naina Jangra</strong> — a web developer and AI-powered digital
+              creator from Kaithal, Haryana.
+            </p>
+            <p>
+              I'm currently pursuing <strong>BCA at MDU University</strong> alongside a
+              <strong>Digital Marketing with AI</strong> course. My work sits where
+              technology and creativity meet: building responsive websites, exploring AI
+              tools, and turning ideas into visuals and content.
+            </p>
+            <p>
+              I'm still early in this journey, and that's what makes it exciting — every
+              project is practice in the fundamentals, better questions and thoughtful design.
+            </p>
+
+            <blockquote class="quote">
+              <p>“Learn with curiosity. Build with intention.”</p>
+              <cite>My approach</cite>
+            </blockquote>
+
+            <ul class="about-facts">
+              <li><span>Based in</span><b>Kaithal, Haryana · India</b></li>
+              <li><span>Currently</span><b>BCA · MDU University</b></li>
+              <li><span>Course</span><b>Digital Marketing with AI</b></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="journey">
+          <div class="journey-head reveal">
+            <span class="section-tag">My journey</span>
+            <h3 class="section-title section-title--sm">How I got <span class="grad-text">here</span></h3>
+          </div>
+
+          <ol class="timeline">
+            <li class="timeline-item reveal">
+              <div class="card timeline-card">
+                <span class="timeline-step" aria-hidden="true">01</span>
+                <span class="timeline-label">Foundation</span>
+                <h4>Completed 12th — CBSE</h4>
+                <p>Finished senior secondary education under the CBSE board, building the base for what came next.</p>
+              </div>
+            </li>
+
+            <li class="timeline-item timeline-item--right reveal">
+              <div class="card timeline-card">
+                <span class="timeline-step" aria-hidden="true">02</span>
+                <span class="timeline-label">Present</span>
+                <h4>BCA at MDU University</h4>
+                <p>Studying computer applications while learning through practice, projects and self-directed exploration.</p>
+              </div>
+            </li>
+
+            <li class="timeline-item reveal">
+              <div class="card timeline-card">
+                <span class="timeline-step" aria-hidden="true">03</span>
+                <span class="timeline-label">Course</span>
+                <h4>Digital Marketing with AI</h4>
+                <p>Learning SEO basics, content creation, social media strategy and AI-assisted workflows.</p>
+              </div>
+            </li>
+
+            <li class="timeline-item timeline-item--right reveal">
+              <div class="card timeline-card">
+                <span class="timeline-step" aria-hidden="true">04</span>
+                <span class="timeline-label">Exploring</span>
+                <h4>AI tools &amp; prompt engineering</h4>
+                <p>Testing AI tools, refining prompts, and learning to question and verify the output.</p>
+              </div>
+            </li>
+
+            <li class="timeline-item timeline-item--goal reveal">
+              <div class="card timeline-card">
+                <span class="timeline-step" aria-hidden="true">05</span>
+                <span class="timeline-label">What's next</span>
+                <h4>Grow as a developer and creator</h4>
+                <p>Keep building useful things and turn curiosity into thoughtful digital work.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         CONTACT
+         ========================================================== -->
+    <section class="section section--tint" id="contact">
+      <div class="container">
+        <div class="contact-grid">
+
+          <div class="contact-copy reveal">
+            <span class="section-tag">04 — Contact</span>
+            <h2 class="section-title">Have an idea?<br>Let's <span class="grad-text">talk</span>.</h2>
+            <p class="section-lede">
+              Whether it's a website, a collaboration or a question about my work —
               I'd love to hear from you.
             </p>
 
             <ul class="contact-rows">
               <li>
-                <span class="ci" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7.5 8.5 6 8.5-6"/></svg>
+                <span class="contact-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7.5 8.5 6 8.5-6"/></svg>
                 </span>
                 <div>
-                  <span class="ci-label">Email</span>
-                  <a class="ci-value" href="mailto:hello@nainajangra.com">hello@nainajangra.com</a>
+                  <span class="contact-label">Email</span>
+                  <!-- TODO (EMAIL): confirm this is your active email address -->
+                  <a class="contact-value" href="mailto:hello@nainajangra.com">hello@nainajangra.com</a>
                 </div>
               </li>
               <li>
-                <span class="ci" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.4 7-11a7 7 0 1 0-14 0c0 4.6 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>
+                <span class="contact-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.4 7-11a7 7 0 1 0-14 0c0 4.6 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>
                 </span>
                 <div>
-                  <span class="ci-label">Location</span>
-                  <span class="ci-value">Kaithal, Haryana, India</span>
-                </div>
-              </li>
-              <li>
-                <span class="ci" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-5 9 5-9 5-9-5Z"/><path d="M7 11.5V16c0 1.7 2.2 3 5 3s5-1.3 5-3v-4.5"/></svg>
-                </span>
-                <div>
-                  <span class="ci-label">Education</span>
-                  <span class="ci-value">BCA · MDU University</span>
-                </div>
-              </li>
-              <li>
-                <span class="ci" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-4 7 4v13"/><path d="M9 21v-5h6v5M9 11h.01M15 11h.01"/></svg>
-                </span>
-                <div>
-                  <span class="ci-label">School</span>
-                  <span class="ci-value">DAV Police Public School</span>
+                  <span class="contact-label">Location</span>
+                  <span class="contact-value">Kaithal, Haryana, India</span>
                 </div>
               </li>
             </ul>
+
+            <div class="contact-actions">
+              <!-- TODO (WHATSAPP): replace the href with your real link, e.g. https://wa.me/919876543210 -->
+              <a class="btn btn--wa" href="#" data-todo>
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.45 1.32 4.95L2 22l5.23-1.37a9.9 9.9 0 0 0 4.8 1.23h.01c5.5 0 9.96-4.46 9.96-9.96S17.54 2 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.1.81.83-3.02-.2-.31a8.16 8.16 0 0 1-1.25-4.34c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.26.86 5.82 2.41a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.26 8.23Zm4.52-6.16c-.25-.13-1.47-.72-1.69-.8-.23-.09-.39-.13-.55.12-.16.25-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.39.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.55-1.34-.76-1.83-.2-.48-.4-.42-.55-.43h-.47c-.16 0-.43.06-.66.31-.23.25-.86.84-.86 2.05 0 1.21.88 2.38 1 2.54.12.16 1.73 2.64 4.19 3.7.59.25 1.04.4 1.4.52.59.19 1.12.16 1.54.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.11-.22-.17-.47-.3Z"/></svg>
+                WhatsApp
+              </a>
+
+              <div class="socials" aria-label="Social profiles">
+                <!-- TODO (GITHUB): replace href with https://github.com/your-username -->
+                <a class="social" href="#" data-todo aria-label="GitHub">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.53 2.87 8.37 6.84 9.73.5.09.68-.22.68-.49v-1.7c-2.78.62-3.37-1.37-3.37-1.37-.45-1.19-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.36 1.12 2.93.85.09-.66.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.74-.11-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.4 9.4 0 0 1 5 0c1.9-1.33 2.74-1.05 2.74-1.05.55 1.41.2 2.45.1 2.71.64.71 1.03 1.62 1.03 2.74 0 3.93-2.35 4.8-4.58 5.05.36.32.68.94.68 1.9v2.82c0 .27.18.59.69.49A10.1 10.1 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z"/></svg>
+                </a>
+                <!-- TODO (LINKEDIN): replace href with https://linkedin.com/in/your-profile -->
+                <a class="social" href="#" data-todo aria-label="LinkedIn">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.94 8.5H3.56V21h3.38V8.5ZM5.25 3a1.97 1.97 0 1 0 0 3.94 1.97 1.97 0 0 0 0-3.94ZM20.44 21h-3.37v-6.53c0-1.63-.58-2.74-2.04-2.74-1.11 0-1.77.75-2.06 1.47-.11.26-.13.62-.13.98V21H9.46s.05-11.35 0-12.5h3.38v1.77c.45-.69 1.25-1.68 3.05-1.68 2.23 0 3.9 1.46 3.9 4.58V21Z"/></svg>
+                </a>
+              </div>
+            </div>
           </div>
 
-          <div class="contact-form-wrap">
-            <form class="contact-form" id="contact-form" novalidate>
+          <div class="contact-form-wrap reveal" style="--delay:100ms">
+            <form class="card contact-form" id="contact-form" novalidate>
               <div class="form-grid">
                 <div class="field">
                   <label for="name">Your name</label>
@@ -1215,54 +615,63 @@
                 </div>
               </div>
 
-              <button class="btn btn-submit" type="submit">
+              <button class="btn btn--primary btn--full" type="submit">
                 Send message
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
               </button>
 
               <p class="form-note">This form opens your email app — no data is stored on a server.</p>
               <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
             </form>
           </div>
+
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- ================= FOOTER ================= -->
+  <!-- ==========================================================
+       FOOTER
+       ========================================================== -->
   <footer class="site-footer">
-    <div class="wrap footer-top">
+    <div class="container footer-inner">
       <div class="footer-brand">
-        <a class="footer-logo" href="#home">naina<span>.</span></a>
-        <p>Aspiring web developer, AI enthusiast and digital creator — building thoughtfully from Kaithal, Haryana.</p>
+        <a class="logo" href="#home" aria-label="Naina Jangra — back to top">naina<span>.</span></a>
+        <p>Web developer and AI-powered digital creator — building thoughtfully from Kaithal, Haryana.</p>
       </div>
 
       <nav class="footer-col" aria-label="Footer">
         <h3>Explore</h3>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
-        <a href="#blog">Blog</a>
-        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
       </nav>
 
       <div class="footer-col">
         <h3>Connect</h3>
         <a href="mailto:hello@nainajangra.com">hello@nainajangra.com</a>
-        <span>Kaithal, Haryana · India</span>
-        <span class="footer-soon">Social profiles coming soon</span>
+        <!-- TODO (SOCIAL): add your real GitHub and LinkedIn URLs here -->
+        <div class="footer-socials">
+          <a class="social social--sm" href="#" data-todo aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.53 2.87 8.37 6.84 9.73.5.09.68-.22.68-.49v-1.7c-2.78.62-3.37-1.37-3.37-1.37-.45-1.19-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.36 1.12 2.93.85.09-.66.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.74-.11-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.4 9.4 0 0 1 5 0c1.9-1.33 2.74-1.05 2.74-1.05.55 1.41.2 2.45.1 2.71.64.71 1.03 1.62 1.03 2.74 0 3.93-2.35 4.8-4.58 5.05.36.32.68.94.68 1.9v2.82c0 .27.18.59.69.49A10.1 10.1 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z"/></svg>
+          </a>
+          <a class="social social--sm" href="#" data-todo aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.94 8.5H3.56V21h3.38V8.5ZM5.25 3a1.97 1.97 0 1 0 0 3.94 1.97 1.97 0 0 0 0-3.94ZM20.44 21h-3.37v-6.53c0-1.63-.58-2.74-2.04-2.74-1.11 0-1.77.75-2.06 1.47-.11.26-.13.62-.13.98V21H9.46s.05-11.35 0-12.5h3.38v1.77c.45-.69 1.25-1.68 3.05-1.68 2.23 0 3.9 1.46 3.9 4.58V21Z"/></svg>
+          </a>
+        </div>
       </div>
     </div>
 
-    <div class="wrap footer-bottom">
+    <div class="container footer-bottom">
       <span>© <span id="year">2026</span> Naina Jangra. All rights reserved.</span>
-      <a href="#home" class="footer-top-link">Back to top ↑</a>
+      <a href="#home">Back to top ↑</a>
     </div>
   </footer>
 
   <button class="to-top" id="to-top" type="button" aria-label="Back to top">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
   </button>
 
   <script src="js/main.js"></script>

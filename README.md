@@ -1,191 +1,146 @@
 # Naina Jangra — Portfolio
 
-Live:
-- Render: **https://naina-jangra-portfolio.onrender.com**
-- Vercel: **https://naina-jangra-portfolio.vercel.app**
+Personal portfolio of **Naina Jangra** — Web Developer & AI-powered Digital Creator.
+Static site: plain HTML, CSS and JavaScript. No build step, no frameworks.
 
-A premium, futuristic portfolio built with plain HTML5, CSS3 and JavaScript.
-No frameworks, no build step — open `index.html` and it runs.
+Live: <https://naina-jangra-portfolio.vercel.app>
 
 ---
 
-## What's included
-
-- Floating dark-glass navigation with scroll-spy and a full-screen mobile menu
-- Hero with an editable typewriter, glowing circular portrait, floating
-  credential chips, rotating seal, 3D pointer tilt and an animated particle field
-- About, Skills, Projects, Blog, Education and Contact sections
-- About section with a personal introduction, six focus cards, a vertical
-  journey timeline and a learning-tools grid
-- Six dark project cards in a responsive two-column grid, with large CSS
-  previews, technology tags, disabled View Project buttons and honest
-  coming-soon badges (no fake screenshots or links)
-- Filterable blog grid with six editable draft topics, custom SVG thumbnails,
-  category filters and a working draft-article page
-- Timeline, scroll reveals, cursor spotlight, marquee, scroll progress,
-  back-to-top button and an email-contact form
-- Fully responsive: tested at 360px, 390px, 640px, 768px, 980px, 1024px,
-  1440px and 1520px with no horizontal scroll
-- Respects `prefers-reduced-motion`, includes a skip link and keyboard focus styles
-
----
-
-## Files
+## Structure
 
 ```
-index.html                  Page structure and content
-blog.html                   Working blog draft/article preview page
-css/style.css               Design system, layout, components, responsiveness
-js/main.js                  Typewriter, navigation, reveals, tilt, filters, form
-js/blog.js                  Blog article content and detail-page rendering
-assets/images/              Placeholder portrait and blog thumbnail artwork (SVG)
-assets/icons/favicon.svg    Browser icon
-assets/icons/skills/        Monochrome tool and skill icons for the orbit
-render.yaml                 Render static-site Blueprint (requires a Git repo)
+index.html                  Single page — all 5 sections
+css/style.css               All styles (tokens → components → responsive)
+js/main.js                  Nav, mobile menu, scroll spy, reveals, form
+assets/icons/favicon.svg    Favicon
+assets/icons/skills/*.svg   Skill logos used in the Skills section
+assets/images/og-cover.png  1200×630 social share image
+assets/images/projects/     Project screenshots (see its README)
+assets/cv/                  Your CV goes here (see its README)
 ```
 
----
+### Sections (in order)
 
-## Run it locally
+1. **Hero** — photo, one-line title, `View Projects` + `Download CV`
+2. **Projects** — 6 cards: screenshot, description, tech tags, Live button
+3. **Skills** — three groups: Frontend · AI Tools · Digital Marketing
+4. **About** — short bio + education & journey merged into one timeline
+5. **Contact** — email, WhatsApp, GitHub/LinkedIn, message form
 
-**Simplest:** double-click `index.html`.
-
-**Optional local server** (recommended if you later add fetch requests):
-
-```bash
-npx serve .
-# or
-python -m http.server 5500
-```
-
-Then visit `http://localhost:5500`.
-
----
-
-## Personalise it
-
-### 1. Add your real photo
-
-The current portrait is a midnight-navy and lavender monogram placeholder.
-
-1. Export a **square** photo, at least `1200 × 1200`, as JPG or WebP.
-2. Save it as `assets/images/naina-portrait.jpg`.
-3. In `index.html`, update the hero image source:
-
-```html
-<img src="assets/images/naina-portrait.jpg" alt="Naina Jangra" width="800" height="800">
-```
-
-4. For the About section, use a **portrait crop** (4:5), save it as
-   `assets/images/naina-about.jpg`, and update that `<img>` too.
-
-Keep the `width`/`height` attributes (or update them) so the page does not jump
-while loading. The circular crop is automatic.
-
-### 2. Set your email address
-
-The site currently uses the placeholder `hello@nainajangra.com`.
-
-Search and replace it in **four places**:
-
-- `js/main.js` → `CONTACT_EMAIL` (line 8)
-- `index.html` → mobile menu link
-- `index.html` → contact section row
-- `index.html` → footer "Connect" column
-
-The form uses a `mailto:` link, so it works without a backend. To collect
-messages through a service instead, replace the submit handler in `js/main.js`
-with your Formspree/Getform endpoint.
-
-### 3. Add live project links
-
-Each project card has a disabled **View Project** button and a specific
-"coming soon" badge until the project is public. At that point, replace both
-with one real link:
-
-```html
-<!-- before -->
-<button class="project-link project-link--disabled" type="button" disabled>View Project</button>
-<span class="project-soon">Live link coming soon</span>
-
-<!-- after -->
-<a class="project-link" href="https://your-project-url.com"
-   target="_blank" rel="noopener">View Project →</a>
-```
-
-`.project-link` is already styled in `css/style.css`; the disabled state becomes
-a refined lavender interactive button automatically once the real link is added.
-
-### 4. Edit the blog drafts
-
-The six blog cards live in the `#blog` section of `index.html`. Each card links
-to a working article preview using a slug:
-
-```html
-<a href="blog.html?post=my-journey-into-web-development">Read More</a>
-```
-
-The matching article content lives in the `posts` object in `js/blog.js`. Edit
-the title, description, category, thumbnail and body copy there. The six
-thumbnail artwork files are in `assets/images/blog/`.
-
-There are **no publication dates** because no real dates were provided. When a
-draft is ready to publish:
-
-1. Add a `<time datetime="YYYY-MM-DD">Month DD, YYYY</time>` inside the card's
-   `.blog-meta` and the article's `.blog-article-meta`.
-2. Remove that card's `Draft` badge and the article's `Draft preview` label.
-3. Replace the draft callout in the article with final copy in Naina's voice.
-
-Keep the slugs in sync between the cards and `js/blog.js`.
-
-### 5. Social profiles
-
-In the footer, replace `<span class="footer-soon">Social profiles coming soon</span>`
-with links to your Instagram, LinkedIn, GitHub, YouTube or Behance.
-
-No project links, social URLs, blog publication dates, achievements or
-qualifications were invented.
+Navbar links: Projects · Skills · About · Contact.
 
 ---
 
 ## Design tokens
 
-All colours and type settings live at the top of `css/style.css`:
+All colours, fonts and spacing live at the top of `css/style.css`:
 
 | Token | Value | Use |
 |---|---|---|
-| `--bg` | `#080812` | Deep space page background |
-| `--bg-2` | `#10152B` | Secondary background and alternate bands |
-| `--bg-3` | `#15172A` | Card and panel surface |
-| `--purple` | `#8B5CF6` | Primary violet accent |
-| `--blue` | `#38BDF8` | Electric-blue secondary accent |
-| `--text` | `#F8FAFC` | Headings and primary text |
-| `--muted` | `#A1A1AA` | Body and secondary text |
-| `--line` | `rgba(139, 92, 246, 0.20)` | Borders and dividers |
-| `--grad` | violet → electric blue | Buttons, accents and highlights |
+| `--bg` | `#0B0B1A` | Page background |
+| `--card` | `#151530` | Card surface |
+| `--text` | `#F5F3FF` | Primary text |
+| `--muted` | `#A5A3C7` | Body / secondary text |
+| `--violet` | `#7C3AED` | Gradient start |
+| `--pink` | `#EC4899` | Gradient end |
+| `--cyan` | `#22D3EE` | Small highlights only |
+| `--grad` | `#7C3AED → #EC4899` | Name, buttons, one word per heading |
+| `--line` | `rgba(245, 243, 255, 0.08)` | Card borders |
 
-Typography: **Playfair Display** (display), **Manrope** (body) and
-**JetBrains Mono** (micro-labels), loaded from Google Fonts with local
-fallbacks.
+Fonts (two only, Google Fonts):
 
-The Skills and Education sections share the same dark palette — the orbit
-accents, timeline line and markers all use the violet → electric-blue gradient,
-so no scoped section theme is needed.
+- **Poppins** — headings
+- **Inter** — body
+
+Effects: blurred gradient glow behind the hero, glass cards with thin borders,
+hover lift + glow, fade-in on scroll, subtle gradient buttons. Everything is
+CSS-only except the reveal observer, and all motion respects
+`prefers-reduced-motion`.
 
 ---
 
-## Notes
+## What you still need to add
 
-- The typewriter cycles through: Web Developer, AI Enthusiast, Digital Creator,
-  Digital Marketing Learner.
-- Motion is disabled automatically for visitors who prefer reduced motion,
-  including the hero particle field and the skills orbit.
-- The portfolio uses a dark futuristic theme — deep space background, violet and
-  electric-blue accents, restrained glassmorphism, ambient glow and a subtle
-  grid/particle atmosphere.
-- Skills and Education keep their existing mechanics (rotating orbit, vertical
-  alternating timeline) and now read as part of the same dark palette.
-- The site is static, so it deploys as-is to Vercel, Netlify or GitHub Pages.
-- Copy in the About and project sections is intentionally neutral and should be
-  reviewed in your own voice before publishing.
+Search `index.html` for the word `TODO` — every spot is marked.
+
+### 1. Photos
+
+Replace the `NJ` monogram placeholders:
+
+| Where | File to add | TODO comment |
+|---|---|---|
+| Hero circle | `assets/images/naina-portrait.jpg` | `TODO (PHOTO)` |
+| About block | `assets/images/naina-about.jpg` | `TODO (PHOTO)` |
+
+Un-comment the `<img>` line under each comment and give it a real `alt` text.
+
+### 2. Project screenshots
+
+Add files to `assets/images/projects/` (list in that folder's README) and
+un-comment the `TODO (SCREENSHOT)` lines.
+
+### 3. Live project links
+
+Every project has a **disabled `Live` button** with a `TODO (LIVE URL)` comment.
+Replace the whole `<button …>` with:
+
+```html
+<a class="live-btn" href="https://your-live-url" target="_blank" rel="noopener noreferrer">
+  Live
+  <svg …></svg>
+</a>
+```
+
+### 4. CV
+
+Put your résumé at `assets/cv/Naina-Jangra-CV.pdf` — the hero button already
+points there. Details in `assets/cv/README.md`.
+
+### 5. Real contact links
+
+| Item | Where |
+|---|---|
+| Email | `mailto:hello@nainajangra.com` in hero/menu/contact/footer + `CONTACT_EMAIL` in `js/main.js` |
+| WhatsApp | Contact section — replace `href="#"` (see `TODO (WHATSAPP)`) |
+| GitHub | Contact + footer — replace `href="#"` (see `TODO (GITHUB)`) |
+| LinkedIn | Contact + footer — replace `href="#"` (see `TODO (LINKEDIN)`) |
+
+Placeholder links carry a `data-todo` attribute, which stops them from jumping
+to the top. **Remove `data-todo`** once a real URL is in place.
+
+### 6. Canonical / social URLs
+
+`og:url`, `og:image`, `twitter:image` and `canonical` point to the Vercel
+domain. Update them if you move to a custom domain.
+
+---
+
+## Editing guide
+
+- **Text** — all copy is in `index.html`; nothing is generated by JS.
+- **Colours / spacing** — change the variables in `:root`, not individual rules.
+- **New project** — copy one `<article class="card project-card">` block and
+  update the number, tag, title, description and tags.
+- **New skill** — add an `<li>` inside the relevant `.skill-list`; drop a small
+  SVG in `assets/icons/skills/` if the skill needs a logo.
+- **New journey step** — copy a `<li class="timeline-item">` in the About
+  section. Add `timeline-item--right` to alternate sides on desktop.
+
+Responsive breakpoints: `1024px`, `900px` (nav collapse), `760px`, `480px`.
+Tested at 1440 / 1280 / 1024 / 768 / 430 / 390 / 360 / 320 px.
+
+---
+
+## Local preview
+
+```bash
+python -m http.server 4173
+# open http://127.0.0.1:4173
+```
+
+## Deploy
+
+- **Vercel** — connected to `main`; every push deploys automatically.
+- **Render** — `render.yaml` describes a static site; use *Manual Deploy →
+  Deploy latest commit* if it falls behind.
