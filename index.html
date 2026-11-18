@@ -114,26 +114,63 @@
         <span class="hero-grid-lines"></span>
       </div>
 
-      <div class="container hero-inner">
-        <div class="hero-copy">
+      <div class="container hero-stage">
+
+        <ul class="hero-socials reveal" aria-label="Social profiles">
+          <!-- TODO (SOCIAL): replace each href with your real profile URL -->
+          <li>
+            <a class="social" href="#" data-todo aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.53 2.87 8.37 6.84 9.73.5.09.68-.22.68-.49v-1.7c-2.78.62-3.37-1.37-3.37-1.37-.45-1.19-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.36 1.12 2.93.85.09-.66.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.74-.11-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.4 9.4 0 0 1 5 0c1.9-1.33 2.74-1.05 2.74-1.05.55 1.41.2 2.45.1 2.71.64.71 1.03 1.62 1.03 2.74 0 3.93-2.35 4.8-4.58 5.05.36.32.68.94.68 1.9v2.82c0 .27.18.59.69.49A10.1 10.1 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a class="social" href="#" data-todo aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.94 8.5H3.56V21h3.38V8.5ZM5.25 3a1.97 1.97 0 1 0 0 3.94 1.97 1.97 0 0 0 0-3.94ZM20.44 21h-3.37v-6.53c0-1.63-.58-2.74-2.04-2.74-1.11 0-1.77.75-2.06 1.47-.11.26-.13.62-.13.98V21H9.46s.05-11.35 0-12.5h3.38v1.77c.45-.69 1.25-1.68 3.05-1.68 2.23 0 3.9 1.46 3.9 4.58V21Z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a class="social" href="#" data-todo aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.1" cy="6.9" r="1.05" fill="currentColor" stroke="none"/></svg>
+            </a>
+          </li>
+          <li>
+            <a class="social" href="#" data-todo aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 7.2a2.7 2.7 0 0 0-1.9-1.9C18 4.8 12 4.8 12 4.8s-6 0-7.7.5A2.7 2.7 0 0 0 2.4 7.2 28 28 0 0 0 2 12a28 28 0 0 0 .4 4.8 2.7 2.7 0 0 0 1.9 1.9c1.7.5 7.7.5 7.7.5s6 0 7.7-.5a2.7 2.7 0 0 0 1.9-1.9A28 28 0 0 0 22 12a28 28 0 0 0-.4-4.8ZM10 15.2V8.8L15.5 12 10 15.2Z"/></svg>
+            </a>
+          </li>
+        </ul>
+
+        <div class="hero-col hero-col--left">
           <p class="eyebrow" data-words data-delay="0">Hello! I'm</p>
 
           <h1 class="hero-name">
             Naina <span class="hero-name__last">Jangra</span><span class="dot">.</span>
           </h1>
+        </div>
 
-          <p class="hero-role" aria-label="Web Developer, AI-powered Creator, Digital Marketer">
-            <span class="typed" aria-hidden="true">
-              <span class="typed-text" id="typed-role">Web Developer</span><span class="caret"></span>
+        <div class="hero-avatar">
+          <span class="avatar-glow" aria-hidden="true"></span>
+          <span class="avatar-ground" aria-hidden="true"></span>
+
+          <div class="avatar-media">
+            <!-- TODO (AVATAR): add your avatar at assets/images/avatar.png, then replace the fallback below with:
+                 <img src="assets/images/avatar.png" alt="Naina Jangra" width="720" height="960" fetchpriority="high"> -->
+            <div class="avatar-fallback" aria-hidden="true"><b class="avatar-initials">NJ</b></div>
+            <span class="sr-only">Naina Jangra</span>
+          </div>
+        </div>
+
+        <div class="hero-col hero-col--right">
+          <p class="hero-title">
+            <span class="hero-title__line">Web Developer &amp;</span>
+            <span class="hero-title__accent" aria-label="AI-powered Digital Creator, Digital Marketer, Web Developer">
+              <span class="typed" aria-hidden="true">
+                <span class="typed-text" id="typed-role">AI-powered Digital Creator</span><span class="caret"></span>
+              </span>
             </span>
           </p>
 
-          <p class="hero-lede" data-words data-delay="320">
-            I build modern, responsive websites and AI-assisted digital experiences —
-            currently pursuing my BCA while learning digital marketing, SEO and content creation.
-          </p>
-
-          <div class="hero-actions reveal" style="--delay:240ms">
+          <div class="hero-actions reveal" style="--delay:120ms">
             <a class="btn btn--primary" href="#projects">
               View Projects
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -144,29 +181,6 @@
               Download CV
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7.5 10.5 12 15l4.5-4.5M5 19h14"/></svg>
             </a>
-          </div>
-
-          <ul class="hero-meta reveal" style="--delay:300ms">
-            <li><i aria-hidden="true"></i>BCA · MDU University</li>
-            <li><i aria-hidden="true"></i>Digital Marketing with AI</li>
-            <li><i aria-hidden="true"></i>Kaithal, Haryana</li>
-          </ul>
-        </div>
-
-        <div class="hero-visual reveal" style="--delay:200ms">
-          <div class="portrait">
-            <span class="portrait-ring" aria-hidden="true"></span>
-            <span class="portrait-dots" aria-hidden="true"></span>
-
-            <div class="portrait-photo">
-              <!-- TODO (PHOTO): replace this placeholder with your real photo:
-                   <img src="assets/images/naina-portrait.jpg" alt="Naina Jangra" width="720" height="720" fetchpriority="high"> -->
-              <span class="portrait-initials" aria-hidden="true">NJ</span>
-              <span class="sr-only">Naina Jangra</span>
-            </div>
-
-            <span class="chip chip--top">BCA · MDU</span>
-            <span class="chip chip--bottom">Kaithal, IN</span>
           </div>
         </div>
       </div>

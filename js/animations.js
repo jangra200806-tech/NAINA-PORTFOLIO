@@ -15,7 +15,7 @@
   var typedEl = document.getElementById("typed-role");
 
   if (typedEl && !reduceMotion) {
-    var ROLES = ["Web Developer", "AI-powered Creator", "Digital Marketer"];
+    var ROLES = ["AI-powered Digital Creator", "Digital Marketer", "Web Developer"];
     var HOLD = 1500;   // pause after a fully typed role
     var ERASE = 32;    // per character while deleting
     var TYPE_MIN = 58; // per character while typing

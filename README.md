@@ -63,9 +63,9 @@ hover lift + glow, fade-in on scroll, subtle gradient buttons.
 
 | Effect | Behaviour |
 |---|---|
-| Hero typing | Cycles `Web Developer` → `AI-powered Creator` → `Digital Marketer`, types/deletes, holds 1.5s, blinking caret |
+| Hero typing | Types `AI-powered Digital Creator` → `Digital Marketer` → `Web Developer` under the fixed `Web Developer &` line, holds 1.5s, blinking caret |
 | Name shimmer | Purple → pink gradient sweeps across `Naina Jangra` on a 7s loop |
-| Word reveal | `Hello! I'm` and the hero paragraph fade up word by word (40ms stagger) on load |
+| Word reveal | `Hello! I'm` fades up word by word on load |
 | Scroll reveal | Headings and cards slide up once per page, then the observer disconnects |
 
 The typed line carries `aria-label` with all three roles while the animated
@@ -88,7 +88,7 @@ Replace the `NJ` monogram placeholders:
 
 | Where | File to add | TODO comment |
 |---|---|---|
-| Hero circle | `assets/images/naina-portrait.jpg` | `TODO (PHOTO)` |
+| Hero avatar | `assets/images/avatar.png` | `TODO (AVATAR)` |
 | About block | `assets/images/naina-about.jpg` | `TODO (PHOTO)` |
 
 Un-comment the `<img>` line under each comment and give it a real `alt` text.
@@ -121,8 +121,10 @@ points there. Details in `assets/cv/README.md`.
 |---|---|
 | Email | `mailto:hello@nainajangra.com` in hero/menu/contact/footer + `CONTACT_EMAIL` in `js/main.js` |
 | WhatsApp | Contact section — replace `href="#"` (see `TODO (WHATSAPP)`) |
-| GitHub | Contact + footer — replace `href="#"` (see `TODO (GITHUB)`) |
-| LinkedIn | Contact + footer — replace `href="#"` (see `TODO (LINKEDIN)`) |
+| GitHub | Hero social rail, Contact + footer — replace `href="#"` (see `TODO (SOCIAL)` / `TODO (GITHUB)`) |
+| LinkedIn | Hero social rail, Contact + footer — replace `href="#"` (see `TODO (SOCIAL)` / `TODO (LINKEDIN)`) |
+| Instagram | Hero social rail only — replace `href="#"` |
+| YouTube | Hero social rail only — replace `href="#"` |
 
 Placeholder links carry a `data-todo` attribute, which stops them from jumping
 to the top. **Remove `data-todo`** once a real URL is in place.
