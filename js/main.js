@@ -1,15 +1,106 @@
 /* ============================================================
    Naina Jangra — Portfolio interactions
-   Lightweight: nav state, mobile menu, scroll spy, reveals,
-   back-to-top, todo-link guard, contact form.
+   Nav state, mobile menu, scroll spy, section numbering,
+   social links, blog switch, back-to-top, contact form.
+   No libraries — plain browser APIs only.
    ============================================================ */
 (function () {
   "use strict";
 
-  /* TODO (EMAIL): must match the address used in index.html */
+  /* ----------------------------------------------------------
+     EDIT HERE — one place for the details only you can provide
+     ---------------------------------------------------------- */
+
+  /* TODO (SOCIAL): paste your real profile URLs, then save.
+     Any link left empty ("") is hidden everywhere automatically. */
+  var SITE_LINKS = {
+    github: "",
+    linkedin: "",
+    instagram: "",
+    youtube: "",
+    whatsapp: ""
+  };
+
+  /* TODO (FORMSPREE): create a free form at https://formspree.io,
+     copy the endpoint (looks like https://formspree.io/f/abcdwxyz)
+     and paste it between the quotes. Until then the form falls back
+     to the visitor's email app. */
+  var FORM_ENDPOINT = "";
+
+  /* Blog is turned off while every post is still a draft.
+     To enable: uncomment the Blog section + nav links in index.html,
+     add real posts, then set this to true. */
+  var SHOW_BLOG = false;
+
+  /* TODO (EMAIL): must match the address used in index.html.
+     Confirm this inbox is real and working before launch. */
   var CONTACT_EMAIL = "hello@nainajangra.com";
 
+  /* ---------------------------------------------------------- */
+
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function pad(n) {
+    return n < 10 ? "0" + n : String(n);
+  }
+
+  /* ---------- Blog switch ---------- */
+  (function applyBlogFlag() {
+    var blog = document.getElementById("blog");
+    if (blog) blog.hidden = !SHOW_BLOG;
+
+    document.querySelectorAll('a[href="#blog"]').forEach(function (link) {
+      link.hidden = !SHOW_BLOG;
+    });
+  })();
+
+  /* ---------- Section numbers (nav + headings) ---------- */
+  (function syncSectionNumbers() {
+    var order = [];
+
+    document.querySelectorAll("[data-section-label]").forEach(function (tag) {
+      var section = tag.closest("section[id]");
+      if (!section || section.hidden) return;
+
+      var index = order.indexOf(section.id);
+      if (index === -1) {
+        order.push(section.id);
+        index = order.length - 1;
+      }
+
+      tag.textContent = pad(index + 1) + " — " + tag.getAttribute("data-section-label");
+    });
+
+    document.querySelectorAll(".nav-links a, .mobile-nav a").forEach(function (link) {
+      var id = (link.getAttribute("href") || "").replace("#", "");
+      var index = order.indexOf(id);
+      var num = link.querySelector(".nav-num, [data-nav-num]");
+      if (num && index !== -1) num.textContent = pad(index + 1);
+    });
+  })();
+
+  /* ---------- Social links ---------- */
+  (function applySocialLinks() {
+    document.querySelectorAll("[data-social]").forEach(function (el) {
+      var url = SITE_LINKS[el.getAttribute("data-social")];
+
+      if (!url) {
+        el.remove();
+        return;
+      }
+
+      el.setAttribute("href", url);
+      if (el.tagName === "A") {
+        el.setAttribute("target", "_blank");
+        el.setAttribute("rel", "noopener noreferrer");
+      }
+      el.removeAttribute("data-todo");
+    });
+
+    document.querySelectorAll(".hero-socials, .socials, .footer-socials").forEach(function (box) {
+      if (!box.querySelector("a[data-social]")) box.hidden = true;
+    });
+  })();
 
   /* ---------- Footer year ---------- */
   var yearEl = document.getElementById("year");
@@ -132,9 +223,24 @@
     });
   });
 
-  /* ---------- Contact form (opens the visitor's mail app) ---------- */
+  /* ---------- Contact form ---------- */
   var form = document.getElementById("contact-form");
   var status = document.getElementById("form-status");
+  var submitBtn = document.getElementById("form-submit");
+  var submitLabel = document.getElementById("form-submit-label");
+
+  function setStatus(text, kind) {
+    if (!status) return;
+    status.textContent = text;
+    status.className = "form-status " + (kind || "");
+  }
+
+  function setSending(sending) {
+    if (!submitBtn) return;
+    submitBtn.disabled = sending;
+    submitBtn.setAttribute("aria-busy", String(sending));
+    if (submitLabel) submitLabel.textContent = sending ? "Sending…" : "Send message";
+  }
 
   if (form && status) {
     form.addEventListener("submit", function (event) {
@@ -142,32 +248,85 @@
 
       if (!form.checkValidity()) {
         form.reportValidity();
-        status.textContent = "Please complete the highlighted fields.";
-        status.className = "form-status err";
+        setStatus("Please complete the highlighted fields.", "err");
         return;
       }
 
       var data = new FormData(form);
+
+      /* Honeypot — real visitors never fill this hidden field. */
+      if (String(data.get("_gotcha") || "").trim()) {
+        form.reset();
+        setStatus("Thanks — your message has been sent.", "ok");
+        return;
+      }
+
       var name = String(data.get("name") || "").trim();
       var email = String(data.get("email") || "").trim();
       var message = String(data.get("message") || "").trim();
 
       if (!name || !email || !message) {
-        status.textContent = "Please fill in every field before sending.";
-        status.className = "form-status err";
+        setStatus("Please fill in every field before sending.", "err");
         return;
       }
 
-      var subject = encodeURIComponent("Portfolio enquiry from " + name);
-      var body = encodeURIComponent("Name: " + name + "\nEmail: " + email + "\n\n" + message);
+      if (!FORM_ENDPOINT) {
+        /* No Formspree endpoint yet: open the visitor's email app instead. */
+        var subject = encodeURIComponent("Portfolio enquiry from " + name);
+        var body = encodeURIComponent("Name: " + name + "\nEmail: " + email + "\n\n" + message);
 
-      window.location.href =
-        "mailto:" + CONTACT_EMAIL + "?subject=" + subject + "&body=" + body;
+        window.location.href =
+          "mailto:" + CONTACT_EMAIL + "?subject=" + subject + "&body=" + body;
 
-      status.textContent =
-        "Opening your email app… If nothing happens, write to " + CONTACT_EMAIL + " directly.";
-      status.className = "form-status ok";
-      form.reset();
+        setStatus("Opening your email app… If nothing happens, write to " + CONTACT_EMAIL + " directly.", "ok");
+        form.reset();
+        return;
+      }
+
+      setSending(true);
+      setStatus("Sending your message…", "pending");
+
+      fetch(FORM_ENDPOINT, {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" }
+      })
+        .then(function (response) {
+          if (response.ok) {
+            form.reset();
+            setStatus("Thanks for reaching out — your message has been sent.", "ok");
+            return;
+          }
+
+          return response
+            .json()
+            .catch(function () {
+              return null;
+            })
+            .then(function (payload) {
+              var detail =
+                payload && payload.errors && payload.errors.length
+                  ? payload.errors
+                      .map(function (err) {
+                        return err.message;
+                      })
+                      .join(" ")
+                  : "";
+              setStatus(
+                detail || "Something went wrong. Please try again or email " + CONTACT_EMAIL + ".",
+                "err"
+              );
+            });
+        })
+        .catch(function () {
+          setStatus(
+            "Could not send your message. Check your connection or email " + CONTACT_EMAIL + ".",
+            "err"
+          );
+        })
+        .finally(function () {
+          setSending(false);
+        });
     });
   }
 })();

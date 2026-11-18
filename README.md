@@ -10,28 +10,35 @@ Live: <https://naina-jangra-portfolio.vercel.app>
 ## Structure
 
 ```
-index.html                  Single page — all 5 sections
+index.html                  Single page — Hero, Projects, Skills, About, Contact
 css/style.css               All styles (tokens → components → responsive)
-js/main.js                  Nav, mobile menu, scroll spy, form
-js/animations.js            Hero typing, word stagger, scroll reveals
+js/skills.js                ONE skills array (Frontend / AI Tools / Digital Marketing tabs)
+js/main.js                  Config (socials, form, blog flag), nav, scroll spy, form
+js/animations.js            Word stagger + scroll reveals
 assets/icons/favicon.svg    Favicon
-assets/icons/skills/*.svg   Skill logos used in the Skills section
+assets/icons/skills/*.svg   Skill logos used by js/skills.js
 assets/images/og-cover.png  1200×630 social share image
 assets/images/projects/     Project screenshots (see its README)
-assets/cv/                  Your CV goes here (see its README)
+assets/resume.pdf           ← add your resume here (currently missing)
+assets/images/naina.jpg     ← add your photo here (currently missing)
 ```
 
 ### Sections (in order)
 
-1. **Hero** — photo, one-line title, `View Projects` + `Download CV`
-2. **Projects** — 6 cards: screenshot, description, tech tags, Live button
-3. **Skills** — three groups: Frontend · AI Tools · Digital Marketing
-4. **About** — short bio + education & journey merged into one timeline
-5. **Contact** — email, WhatsApp, GitHub/LinkedIn, message form
+1. **Hero** — photo, `Web Developer` headline, one supporting line,
+   `View Projects` + `Contact Me`
+2. **Projects** — 6 cards: screenshot slot, title, one-line description, tech
+   tags, and Live / GitHub buttons (only shown when a real URL is added)
+3. **Skills** — one data array, three tabs: Frontend · AI Tools · Digital Marketing
+4. **About** — bio + school → BCA → Digital Marketing with AI → AI tools → goal
+   timeline in one place
+5. **Contact** — email, resume button, social links, working message form
+6. **Blog** — commented out (all posts are drafts). See “Turning the Blog on”.
 
-Navbar: `NJ` monogram on the left, links on the right — Projects · Skills · About ·
-Contact. Glass blur appears on scroll; below 901px the links collapse into a
-hamburger panel.
+Navbar: `NJ` monogram on the left, numbered links on the right — Projects · Skills ·
+About · Contact. Numbers are generated from the page order, so they stay in sync
+with the section labels. Glass blur appears on scroll; below 901px the links
+collapse into a hamburger panel.
 
 ---
 
@@ -48,7 +55,8 @@ All colours, fonts and spacing live at the top of `css/style.css`:
 | `--violet` | `#7C3AED` | Gradient start |
 | `--pink` | `#EC4899` | Gradient end |
 | `--cyan` | `#22D3EE` | Small highlights only |
-| `--grad` | `#7C3AED → #EC4899` | Name, buttons, one word per heading |
+| `--grad` | `#7C3AED → #EC4899` | Name and gradient words |
+| `--grad-fill` | `#6D28D9 → #DB2777` | Filled buttons/tabs (keeps white text readable) |
 | `--line` | `rgba(245, 243, 255, 0.08)` | Card borders |
 
 Fonts (two only, Google Fonts):
@@ -63,92 +71,151 @@ hover lift + glow, fade-in on scroll, subtle gradient buttons.
 
 | Effect | Behaviour |
 |---|---|
-| Hero typing | Types `AI-powered Digital Creator` → `Digital Marketer` → `Web Developer` under the fixed `Web Developer &` line, holds 1.5s, blinking caret |
 | Name shimmer | Purple → pink gradient sweeps across `Naina Jangra` on a 7s loop |
 | Word reveal | `Hello! I'm` fades up word by word on load |
 | Scroll reveal | Headings and cards slide up once per page, then the observer disconnects |
 
-The typed line carries `aria-label` with all three roles while the animated
-text is `aria-hidden`, so screen readers get stable text. Everything is plain
-CSS plus ~100 lines of vanilla JS — no libraries.
-
-Motion is disabled automatically under `prefers-reduced-motion: reduce`:
-typing stops on the first role, words are never split, transitions and the
-caret are removed.
+Everything is plain CSS plus a small vanilla JS file — no libraries. Motion and
+animations are disabled under `prefers-reduced-motion: reduce`; all content is
+shown immediately.
 
 ---
 
 ## What you still need to add
 
-Search `index.html` for the word `TODO` — every spot is marked.
+Search the project for `TODO` — every spot is marked. Nothing below is invented
+or filled with fake data.
 
-### 1. Photos
+### 1. Photo (Hero + About)
 
-Replace the `NJ` monogram placeholders:
+Add **one** portrait at `assets/images/naina.jpg` (roughly 720×900, face centred
+near the top). Then replace the `NJ` monogram in both places:
 
-| Where | File to add | TODO comment |
+| Where | TODO comment | Replace with |
 |---|---|---|
-| Hero avatar | `assets/images/avatar.png` | `TODO (AVATAR)` |
-| About block | `assets/images/naina-about.jpg` | `TODO (PHOTO)` |
+| Hero | `TODO (PHOTO)` | `<img src="/assets/images/naina.jpg" alt="Naina Jangra" width="720" height="960" fetchpriority="high">` |
+| About | `TODO (PHOTO)` | `<img src="/assets/images/naina.jpg" alt="Naina Jangra" width="720" height="900" loading="lazy">` |
 
-Un-comment the `<img>` line under each comment and give it a real `alt` text.
+The CSS already crops with `object-fit: cover`, keeps the rounded frame and the
+hero’s bottom fade/glow.
 
 ### 2. Project screenshots
 
-Add files to `assets/images/projects/` (list in that folder's README) and
-un-comment the `TODO (SCREENSHOT)` lines.
+Put images in `assets/images/projects/` using the filenames listed in that
+folder’s README, then un-comment the `TODO (SCREENSHOT)` `<img>` inside each
+card. Cards show a numbered gradient panel until then.
 
-### 3. Live project links
+### 3. Project links (Live / GitHub)
 
-Every project has a **disabled `Live` button** with a `TODO (LIVE URL)` comment.
-Replace the whole `<button …>` with:
+Each card has a `TODO (LINKS)` comment with both buttons commented out. Add the
+real URL(s), uncomment only the buttons you have, and delete the rest. **Do not
+add a disabled button** — a missing link should simply not appear.
 
 ```html
-<a class="live-btn" href="https://your-live-url" target="_blank" rel="noopener noreferrer">
-  Live
-  <svg …></svg>
-</a>
+<div class="project-actions">
+  <a class="project-link" href="https://your-live-url" target="_blank" rel="noopener noreferrer">Live …</a>
+  <a class="project-link project-link--ghost" href="https://github.com/you/repo" target="_blank" rel="noopener noreferrer">GitHub …</a>
+</div>
 ```
 
-### 4. CV
+### 4. Resume
 
-Put your résumé at `assets/cv/Naina-Jangra-CV.pdf` — the hero button already
-points there. Details in `assets/cv/README.md`.
+Save your resume as `assets/resume.pdf`, then remove `data-todo` from the
+`Download Resume` button in the Contact section. (`data-todo` currently stops
+the link from opening a 404 page.)
 
-### 5. Real contact links
+### 5. Social links — one place
 
-| Item | Where |
-|---|---|
-| Email | `mailto:hello@nainajangra.com` in hero/menu/contact/footer + `CONTACT_EMAIL` in `js/main.js` |
-| WhatsApp | Contact section — replace `href="#"` (see `TODO (WHATSAPP)`) |
-| GitHub | Hero social rail, Contact + footer — replace `href="#"` (see `TODO (SOCIAL)` / `TODO (GITHUB)`) |
-| LinkedIn | Hero social rail, Contact + footer — replace `href="#"` (see `TODO (SOCIAL)` / `TODO (LINKEDIN)`) |
-| Instagram | Hero social rail only — replace `href="#"` |
-| YouTube | Hero social rail only — replace `href="#"` |
+Open `js/main.js` and fill `SITE_LINKS`:
 
-Placeholder links carry a `data-todo` attribute, which stops them from jumping
-to the top. **Remove `data-todo`** once a real URL is in place.
+```js
+var SITE_LINKS = {
+  github: "",      // https://github.com/your-username
+  linkedin: "",    // https://www.linkedin.com/in/your-profile
+  instagram: "",   // https://www.instagram.com/your-handle
+  youtube: "",     // https://www.youtube.com/@your-channel
+  whatsapp: ""     // https://wa.me/91XXXXXXXXXX
+};
+```
 
-### 6. Canonical / social URLs
+Links left empty are **hidden automatically** in the hero rail, Contact section
+and footer — no dead `href="#"` anywhere. Add a URL and the icon appears on the
+next page load.
 
-`og:url`, `og:image`, `twitter:image` and `canonical` point to the Vercel
-domain. Update them if you move to a custom domain.
+### 6. Contact form (Formspree)
+
+The form is already wired. You only need a free Formspree endpoint:
+
+1. Create an account at <https://formspree.io>.
+2. Create a new form and point it at the inbox you want messages delivered to.
+3. Copy the endpoint — it looks like `https://formspree.io/f/abcdwxyz`.
+4. In `js/main.js`, paste it into `FORM_ENDPOINT`:
+   ```js
+   var FORM_ENDPOINT = "https://formspree.io/f/abcdwxyz";
+   ```
+5. Submit a test message on the site, confirm it arrives by email, and check
+   that the green success message appears. Stop the endpoint (or use a bad one)
+   to see the red error message.
+6. Spam protection: Formspree handles filtering, and the form also includes a
+   hidden `_gotcha` honeypot field.
+
+Until an endpoint is set, submitting opens the visitor’s email app with the
+message pre-filled, so the form is never a dead end.
+
+### 7. Email address
+
+Verify that **hello@nainajangra.com** is a real, working inbox (send yourself a
+test). It is used in the header menu, contact rows, footer, form fallback and
+`CONTACT_EMAIL` in `js/main.js`. Search `TODO (EMAIL)`.
+
+### 8. Blog (hidden)
+
+The Blog section and its nav links are commented out on purpose. To turn it on:
+
+1. Write your real posts inside the commented section in `index.html`
+   (duplicate the `TODO (BLOG)` card).
+2. Uncomment the section and the two Blog nav links (desktop + mobile).
+3. In `js/main.js`, set `SHOW_BLOG = true`.
+
+Section numbers update automatically for the new order. Leave it off until you
+have at least one real post.
+
+### 9. SEO image / domain
+
+`og:url`, `og:image`, `twitter:image` and `canonical` point at the Vercel domain
+and use `assets/images/og-cover.png` (1200×630). Update these if you move to a
+custom domain or replace the share image. `TODO (SEO)` also marks where to add
+`sameAs` profile links to the Person schema.
 
 ---
 
 ## Editing guide
 
-- **Text** — all copy is in `index.html`; nothing is generated by JS.
+- **Skills** — edit only `SKILLS` in `js/skills.js`. Each item is
+  `{ name, icon }`, `{ name, pair: [iconA, iconB] }` or `{ name, inline: "<svg…>" }`.
+  Tabs, icons and the panel are generated from that array.
+- **Section numbers** — set by `data-section-label` + page order in `js/main.js`.
+  No manual renumbering when a section is added or the Blog is enabled.
+- **Text** — all copy is in `index.html`.
 - **Colours / spacing** — change the variables in `:root`, not individual rules.
 - **New project** — copy one `<article class="card project-card">` block and
-  update the number, tag, title, description and tags.
-- **New skill** — add an `<li>` inside the relevant `.skill-list`; drop a small
-  SVG in `assets/icons/skills/` if the skill needs a logo.
-- **New journey step** — copy a `<li class="timeline-item">` in the About
-  section. Add `timeline-item--right` to alternate sides on desktop.
+  update the number, title, description, tags and TODO comments.
+- **New journey step** — copy a `<li class="timeline-item">` in About. Add
+  `timeline-item--right` to alternate sides on desktop.
 
 Responsive breakpoints: `1024px`, `900px` (nav collapse), `760px`, `480px`.
 Tested at 1440 / 1280 / 1024 / 768 / 430 / 390 / 360 / 320 px.
+
+### Accessibility notes
+
+- Visible cyan focus outlines on every link, button, input and tab.
+- Skills use the WAI-ARIA tabs pattern: arrow keys, Home/End, `aria-selected`,
+  `aria-controls`, one tab stop.
+- Form fields have real labels; success/error text is announced via
+  `role="status"` + `aria-live="polite"`.
+- Contrast: body text 8.0:1, muted text 7.3:1 on cards, white on filled
+  gradient 4.6–7.1:1.
+- Reduced motion removes the shimmer, float, reveals and smooth scrolling.
 
 ---
 

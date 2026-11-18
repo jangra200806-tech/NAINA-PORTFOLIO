@@ -1,7 +1,7 @@
 /* ============================================================
    Naina Jangra — Text animations
-   Small, dependency-free: hero typing, word stagger and
-   scroll reveals. Everything respects prefers-reduced-motion.
+   Small, dependency-free: word stagger and scroll reveals.
+   Everything respects prefers-reduced-motion.
    ============================================================ */
 (function () {
   "use strict";
@@ -9,58 +9,7 @@
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* ----------------------------------------------------------
-     1. Hero typewriter — Web Developer / AI-powered Creator /
-        Digital Marketer. Types, holds 1.5s, deletes, repeats.
-     ---------------------------------------------------------- */
-  var typedEl = document.getElementById("typed-role");
-
-  if (typedEl && !reduceMotion) {
-    var ROLES = ["AI-powered Digital Creator", "Digital Marketer", "Web Developer"];
-    var HOLD = 1500;   // pause after a fully typed role
-    var ERASE = 32;    // per character while deleting
-    var TYPE_MIN = 58; // per character while typing
-    var TYPE_JITTER = 38;
-
-    var roleIndex = 0;
-    var charCount = ROLES[0].length;
-    var deleting = true;
-
-    var step = function () {
-      var word = ROLES[roleIndex];
-      var delay;
-
-      if (deleting) {
-        charCount -= 1;
-        typedEl.textContent = word.slice(0, Math.max(charCount, 0));
-
-        if (charCount <= 0) {
-          deleting = false;
-          roleIndex = (roleIndex + 1) % ROLES.length;
-          delay = 260;
-        } else {
-          delay = ERASE;
-        }
-      } else {
-        charCount += 1;
-        typedEl.textContent = word.slice(0, charCount);
-
-        if (charCount >= word.length) {
-          deleting = true;
-          delay = HOLD;
-        } else {
-          delay = TYPE_MIN + Math.random() * TYPE_JITTER;
-        }
-      }
-
-      window.setTimeout(step, delay);
-    };
-
-    // Let the hero settle, then start cycling from the static first role.
-    window.setTimeout(step, HOLD);
-  }
-
-  /* ----------------------------------------------------------
-     2. Word-by-word reveal for [data-words] elements.
+     1. Word-by-word reveal for [data-words] elements.
         Each word becomes an inline span with a staggered delay.
      ---------------------------------------------------------- */
   var wordBlocks = Array.prototype.slice.call(
@@ -101,7 +50,7 @@
   }
 
   /* ----------------------------------------------------------
-     3. Scroll reveal — headings and cards slide up once,
+     2. Scroll reveal — headings and cards slide up once,
         then the observer lets go.
      ---------------------------------------------------------- */
   var revealEls = Array.prototype.slice.call(

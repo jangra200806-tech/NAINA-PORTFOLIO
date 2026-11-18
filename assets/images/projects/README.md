@@ -17,5 +17,6 @@ comment inside that card and un-comment the `<img>` tag.
 
 Also add a real `alt` text describing what the screenshot shows.
 
-For the hero and about photos, place `naina-portrait.jpg` and `naina-about.jpg` in
-`assets/images/` and un-comment the matching `TODO (PHOTO)` blocks in `index.html`.
+For the hero and about photos, save one portrait as `assets/images/naina.jpg`
+(roughly 720×900, face centred near the top) and un-comment the matching
+`TODO (PHOTO)` blocks in `index.html`.
