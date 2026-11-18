@@ -12,7 +12,8 @@ Live: <https://naina-jangra-portfolio.vercel.app>
 ```
 index.html                  Single page — all 5 sections
 css/style.css               All styles (tokens → components → responsive)
-js/main.js                  Nav, mobile menu, scroll spy, reveals, form
+js/main.js                  Nav, mobile menu, scroll spy, form
+js/animations.js            Hero typing, word stagger, scroll reveals
 assets/icons/favicon.svg    Favicon
 assets/icons/skills/*.svg   Skill logos used in the Skills section
 assets/images/og-cover.png  1200×630 social share image
@@ -54,9 +55,24 @@ Fonts (two only, Google Fonts):
 - **Inter** — body
 
 Effects: blurred gradient glow behind the hero, glass cards with thin borders,
-hover lift + glow, fade-in on scroll, subtle gradient buttons. Everything is
-CSS-only except the reveal observer, and all motion respects
-`prefers-reduced-motion`.
+hover lift + glow, fade-in on scroll, subtle gradient buttons.
+
+### Text animations (`js/animations.js`)
+
+| Effect | Behaviour |
+|---|---|
+| Hero typing | Cycles `Web Developer` → `AI-powered Creator` → `Digital Marketer`, types/deletes, holds 1.5s, blinking caret |
+| Name shimmer | Purple → pink gradient sweeps across `Naina Jangra` on a 7s loop |
+| Word reveal | `Hello! I'm` and the hero paragraph fade up word by word (40ms stagger) on load |
+| Scroll reveal | Headings and cards slide up once per page, then the observer disconnects |
+
+The typed line carries `aria-label` with all three roles while the animated
+text is `aria-hidden`, so screen readers get stable text. Everything is plain
+CSS plus ~100 lines of vanilla JS — no libraries.
+
+Motion is disabled automatically under `prefers-reduced-motion: reduce`:
+typing stops on the first role, words are never split, transitions and the
+caret are removed.
 
 ---
 

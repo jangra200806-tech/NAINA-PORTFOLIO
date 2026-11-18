@@ -123,31 +123,6 @@
     });
   }
 
-  /* ---------- Scroll reveal ---------- */
-  var revealEls = document.querySelectorAll(".reveal");
-
-  if (reduceMotion || !("IntersectionObserver" in window)) {
-    revealEls.forEach(function (el) {
-      el.classList.add("visible");
-    });
-  } else {
-    var revealObserver = new IntersectionObserver(
-      function (entries, observer) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.12, rootMargin: "0px 0px -5% 0px" }
-    );
-
-    revealEls.forEach(function (el) {
-      revealObserver.observe(el);
-    });
-  }
-
   /* ---------- Placeholder links (data-todo) ----------
      Links that still need a real URL carry data-todo so they do not
      jump to the top of the page. Remove the attribute once filled. */

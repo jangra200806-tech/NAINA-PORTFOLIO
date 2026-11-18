@@ -116,17 +116,19 @@
 
       <div class="container hero-inner">
         <div class="hero-copy">
-          <p class="eyebrow reveal">Hello, I'm</p>
+          <p class="eyebrow" data-words data-delay="0">Hello! I'm</p>
 
-          <h1 class="hero-name reveal" style="--delay:60ms">
-            Naina <span class="grad-text">Jangra</span><span class="dot">.</span>
+          <h1 class="hero-name">
+            Naina <span class="hero-name__last">Jangra</span><span class="dot">.</span>
           </h1>
 
-          <p class="hero-role reveal" style="--delay:120ms">
-            Web Developer &amp; <span class="grad-text">AI-powered</span> Digital Creator
+          <p class="hero-role" aria-label="Web Developer, AI-powered Creator, Digital Marketer">
+            <span class="typed" aria-hidden="true">
+              <span class="typed-text" id="typed-role">Web Developer</span><span class="caret"></span>
+            </span>
           </p>
 
-          <p class="hero-lede reveal" style="--delay:180ms">
+          <p class="hero-lede" data-words data-delay="320">
             I build modern, responsive websites and AI-assisted digital experiences —
             currently pursuing my BCA while learning digital marketing, SEO and content creation.
           </p>
@@ -675,5 +677,6 @@
   </button>
 
   <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
 </body>
 </html>
