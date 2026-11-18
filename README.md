@@ -29,7 +29,9 @@ assets/cv/                  Your CV goes here (see its README)
 4. **About** — short bio + education & journey merged into one timeline
 5. **Contact** — email, WhatsApp, GitHub/LinkedIn, message form
 
-Navbar links: Projects · Skills · About · Contact.
+Navbar: `NJ` monogram on the left, links on the right — Projects · Skills · About ·
+Contact. Glass blur appears on scroll; below 901px the links collapse into a
+hamburger panel.
 
 ---
 
