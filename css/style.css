@@ -5146,8 +5146,83 @@ html.js .warm-section .skills-orbit.reveal.visible {
   transform: none;
 }
 
+@keyframes orbit-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbit-spin-reverse {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes orbit-counter {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes orbit-counter-reverse {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.orbit-track {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  transform-origin: 50% 50%;
+  will-change: transform;
+}
+
+.orbit-track--outer {
+  z-index: 2;
+  animation: orbit-spin 88s linear infinite;
+}
+
+.orbit-track--inner {
+  z-index: 3;
+  animation: orbit-spin-reverse 64s linear infinite;
+}
+
+.orbit-track--outer .orbit-content {
+  animation: orbit-counter 88s linear infinite;
+}
+
+.orbit-track--inner .orbit-content {
+  animation: orbit-counter-reverse 64s linear infinite;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .skills-orbit-shell:hover .orbit-track,
+  .skills-orbit-shell:hover .orbit-content {
+    animation-play-state: paused;
+  }
+}
+
+.skills-orbit-shell:focus-within .orbit-track,
+.skills-orbit-shell:focus-within .orbit-content {
+  animation-play-state: paused;
+}
+
 .orbit-ring {
   position: absolute;
+  z-index: 1;
   border-radius: 50%;
   pointer-events: none;
 }
@@ -5169,6 +5244,7 @@ html.js .warm-section .skills-orbit.reveal.visible {
 
 .orbit-core {
   position: absolute;
+  z-index: 4;
   top: 50%;
   left: 50%;
   display: flex;
@@ -5217,6 +5293,7 @@ html.js .warm-section .skills-orbit.reveal.visible {
   left: var(--left);
   width: clamp(56px, 8vw, 96px);
   transform: translate(-50%, -50%);
+  pointer-events: auto;
 }
 
 .orbit-content {
@@ -5224,35 +5301,43 @@ html.js .warm-section .skills-orbit.reveal.visible {
   flex-direction: column;
   align-items: center;
   gap: clamp(5px, 0.7vw, 9px);
+  pointer-events: auto;
+  transform-origin: 50% 50%;
+  will-change: transform;
 }
 
 .orbit-icon {
   display: grid;
   place-items: center;
-  width: clamp(34px, 6vw, 60px);
-  height: clamp(34px, 6vw, 60px);
-  border: 1px solid rgba(64, 49, 45, 0.12);
+  width: clamp(36px, 6.2vw, 64px);
+  height: clamp(36px, 6.2vw, 64px);
+  border: 1px solid rgba(64, 49, 45, 0.16);
   border-radius: 50%;
   background: linear-gradient(145deg, #fbf7f0 0%, #e4d4be 100%);
-  box-shadow: 0 15px 28px -20px rgba(0, 0, 0, 0.9),
-    inset 0 1px 0 rgba(255, 255, 255, 0.55);
+  box-shadow: 0 18px 30px -18px rgba(8, 5, 4, 0.92),
+    inset 0 1px 0 rgba(255, 255, 255, 0.62);
   transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease),
-    background 0.4s var(--ease);
+    background 0.4s var(--ease), border-color 0.4s var(--ease);
 }
 
 .orbit-icon img {
-  width: clamp(18px, 2.2vw, 28px);
+  display: block;
+  width: 52%;
+  max-width: 100%;
   height: auto;
+  object-fit: contain;
 }
 
 .orbit-icon-pair {
   display: flex;
   align-items: center;
-  gap: 3px;
+  justify-content: center;
+  width: 76%;
+  gap: 8%;
 }
 
 .orbit-icon-pair img {
-  width: clamp(13px, 1.55vw, 20px);
+  width: 46%;
   height: auto;
 }
 
@@ -5269,15 +5354,22 @@ html.js .warm-section .skills-orbit.reveal.visible {
   transition: color 0.3s var(--ease);
 }
 
+.orbit-item:hover {
+  z-index: 6;
+}
+
 .orbit-item:hover .orbit-icon {
   transform: translateY(-4px) scale(1.06);
+  border-color: rgba(184, 135, 120, 0.58);
   background: linear-gradient(145deg, #fffaf3 0%, #eadcc9 100%);
-  box-shadow: 0 22px 36px -22px rgba(0, 0, 0, 0.95),
-    0 0 0 4px rgba(184, 135, 120, 0.1);
+  box-shadow: 0 24px 40px -20px rgba(8, 5, 4, 0.96),
+    0 0 0 4px rgba(184, 135, 120, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
 }
 
 .orbit-item:hover .orbit-name {
   color: var(--warm-cream);
+  text-shadow: 0 1px 14px rgba(247, 241, 232, 0.2);
 }
 
 .warm-skills-foot {
@@ -5511,16 +5603,8 @@ html.js .warm-section .skills-orbit.reveal.visible {
   }
 
   .orbit-icon {
-    width: 38px;
-    height: 38px;
-  }
-
-  .orbit-icon img {
-    width: 19px;
-  }
-
-  .orbit-icon-pair img {
-    width: 14px;
+    width: 40px;
+    height: 40px;
   }
 
   .orbit-name {
@@ -5559,26 +5643,18 @@ html.js .warm-section .skills-orbit.reveal.visible {
     letter-spacing: 0.18em;
   }
 
+  .orbit-content {
+    gap: 4px;
+  }
+
   .orbit-icon {
-    width: 34px;
-    height: 34px;
-  }
-
-  .orbit-icon img {
-    width: 17px;
-  }
-
-  .orbit-icon-pair {
-    gap: 2px;
-  }
-
-  .orbit-icon-pair img {
-    width: 12px;
+    width: 35px;
+    height: 35px;
   }
 
   .orbit-name {
-    font-size: 0.47rem;
-    line-height: 1.16;
+    font-size: 0.5rem;
+    line-height: 1.14;
   }
 
   .orbit-core strong {
@@ -5626,22 +5702,18 @@ html.js .warm-section .skills-orbit.reveal.visible {
     width: 48px;
   }
 
+  .orbit-content {
+    gap: 4px;
+  }
+
   .orbit-icon {
     width: 30px;
     height: 30px;
   }
 
-  .orbit-icon img {
-    width: 15px;
-  }
-
-  .orbit-icon-pair img {
-    width: 10px;
-  }
-
   .orbit-name {
-    font-size: 0.44rem;
-    line-height: 1.14;
+    font-size: 0.46rem;
+    line-height: 1.1;
   }
 
   .orbit-core strong {
@@ -5651,6 +5723,13 @@ html.js .warm-section .skills-orbit.reveal.visible {
   .orbit-core span {
     font-size: 0.32rem;
     letter-spacing: 0.08em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orbit-track,
+  .orbit-track .orbit-content {
+    animation: none !important;
   }
 }
 
