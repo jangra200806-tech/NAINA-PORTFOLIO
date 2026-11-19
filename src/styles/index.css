@@ -258,6 +258,15 @@ button {
     transform: none;
   }
 }
+.hero-copy {
+  animation: fadeUp 0.8s ease both;
+}
+.hero-visual {
+  animation: fadeUp 0.9s ease 0.15s both;
+}
+.hero-stats {
+  animation: fadeUp 0.8s ease 0.3s both;
+}
 @keyframes fadeIn {
   from {
     opacity: 0;
